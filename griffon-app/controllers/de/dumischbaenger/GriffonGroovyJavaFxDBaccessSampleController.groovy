@@ -17,6 +17,7 @@ class GriffonGroovyJavaFxDBaccessSampleController extends AbstractGriffonControl
     @ControllerAction
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     void click() {
+      println("clickAction")
         int count = model.clickCount.toInteger()
         model.clickCount = String.valueOf(count + 1)
     }

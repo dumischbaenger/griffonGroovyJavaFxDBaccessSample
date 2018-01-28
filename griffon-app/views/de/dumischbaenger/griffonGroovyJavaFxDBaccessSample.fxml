@@ -4,10 +4,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button mnemonicParsing="false" text="Button" />
+      <Button fx:id="clickActionTarget" defaultButton="true" mnemonicParsing="false" text="Search" />
       <TextField />
    </children>
 </VBox>
