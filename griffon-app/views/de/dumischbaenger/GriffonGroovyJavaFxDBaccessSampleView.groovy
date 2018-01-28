@@ -31,6 +31,6 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
     stage.setScene(scene);
     getApplication().getWindowManager().attach("mainWindow", stage);
     connectActions(node, controller);
-    connectMessageSource(node); 
+    connectMessageSource(node);
   }
 }
