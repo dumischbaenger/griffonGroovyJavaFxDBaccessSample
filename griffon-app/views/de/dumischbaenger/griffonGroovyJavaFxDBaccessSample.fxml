@@ -5,9 +5,9 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1">
+<VBox fx:controller="de.dumischbaenger.GriffonGroovyJavaFxDBaccessSampleView" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Button fx:id="countButton" defaultButton="true" mnemonicParsing="false" text="Search" JavaFXUtils.griffonActionId="click" JavaFXUtils.i18nKey="search.button" JavaFXUtils.i18nDefaultValue="Search"/>
-      <TextField />
+      <TextField fx:id="countText" />
    </children>
 </VBox>

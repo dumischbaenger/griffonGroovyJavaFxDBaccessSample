@@ -11,14 +11,16 @@ import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController
 
 @ArtifactProviderFor(GriffonController)
 class GriffonGroovyJavaFxDBaccessSampleController extends AbstractGriffonController{
-    @MVCMember @Nonnull
-    GriffonGroovyJavaFxDBaccessSampleModel model
+  @MVCMember @Nonnull
+  GriffonGroovyJavaFxDBaccessSampleModel model
 
-    @ControllerAction
-    @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
-    void click() {
-      println("clickAction")
-        int count = model.clickCount.toInteger()
-        model.clickCount = String.valueOf(count + 1)
-    }
+  @ControllerAction
+  @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
+  void click() {
+    println("clickAction")
+    
+    String helper=model.clickCount ? model.clickCount : "0"
+    int count = helper.toInteger()
+    model.clickCount = String.valueOf(count + 1)
+  }
 }
