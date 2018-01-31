@@ -7,8 +7,9 @@ import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
-import javafx.scene.Group
+import javafx.fxml.FXML
 import javafx.scene.Scene
+import javafx.scene.control.TextField
 import javafx.stage.Stage
 
 @ArtifactProviderFor(GriffonView)
@@ -18,6 +19,9 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
   @MVCMember @Nonnull
   GriffonGroovyJavaFxDBaccessSampleModel model
 
+  @FXML 
+  TextField countText
+  
   void initUI() {
     Stage stage = (Stage) getApplication()
         .createApplicationContainer(Collections.<String, Object>emptyMap());
@@ -33,5 +37,7 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
     getApplication().getWindowManager().attach("mainWindow", stage);
     connectActions(node, controller);
     connectMessageSource(node);
+    
+    model.clickCount().bindBidirectional(countText.textProperty());
   }
 }
