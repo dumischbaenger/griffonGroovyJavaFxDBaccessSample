@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.codehaus.groovy.eclipse.groovyScriptLaunchConfiguration">
+<stringAttribute key="org.codehaus.groovy.eclipse.launch.runType" value="de.dumischbaenger.Launcher"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/griffonGroovyJavaFxDBaccessSample"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="4"/>
+</listAttribute>
+<listAttribute key="org.eclipse.jdt.launching.CLASSPATH">
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/main"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/test"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/test"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/test"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/functionalTest"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/integrationTest"/>
+<listEntry value="/home/bdonauba/eclipse-java/griffonGroovyJavaFxDBaccessSample/bin/default"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-guice/2.13.0/a2cd1ce2aed5080695e8631814b1163487a9203b/griffon-guice-2.13.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-core-java8/2.13.0/f114ccd2017c49fa9471721109b5ab9ee7e1e511/griffon-core-java8-2.13.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-javafx-groovy/2.13.0/cba55c803de5a44b4ff31f0f41476a4d52d42802/griffon-javafx-groovy-2.13.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-javafx/2.13.0/247fc7e3dffd11de679821a065431a29abf7cd28/griffon-javafx-2.13.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-groovy-compile/2.13.0/7c6ff828711d211d4fdda50a913d9a7044b432b8/griffon-groovy-compile-2.13.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-groovy/2.13.0/f3239036664aea043843e84b9bc2469f05e506d2/griffon-groovy-2.13.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-core-compile/2.13.0/4ce26974a56d4e4eb0cc8717a6ef9318de732265/griffon-core-compile-2.13.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-core/2.13.0/1faadd2873578832e040de1f0bf6cd625eb4f810/griffon-core-2.13.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/4.1.0/eeb69005da379a10071aa4948c48d89250febb07/guice-4.1.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/com.google.guava/guava/23.0/c947004bb13d18182be60077ade044099e4f26f1/guava-23.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.2/25ea2e8b0c338a877313bd4672d3fe056ea78f0d/jsr305-3.0.2.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.groovyfx/groovyfx/8.0.0/9490a48a49e01be9c0ba73f51a4ea970600cfb93/groovyfx-8.0.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.groovy/groovy-all/2.4.13/7e410735a50e495323dd4855ddd13ea7dad23ac1/groovy-all-2.4.13.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.kordamp.gipsy/gipsy/0.4.1/73d94da80d92fbe801ccd4798356cd919e0b185f/gipsy-0.4.1.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.kordamp.jipsy/jipsy/0.4.1/5268d83613766c2681f50ea49a1f35ea8dade0bc/jipsy-0.4.1.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/com.google.errorprone/error_prone_annotations/2.0.18/5f65affce1684999e2f4024983835efc3504012e/error_prone_annotations-2.0.18.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/com.google.j2objc/j2objc-annotations/1.1/976d8d30bebc251db406f2bdb3eb01962b5685b3/j2objc-annotations-1.1.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.14/775b7e22fb10026eed3f86e8dc556dfafe35f2d5/animal-sniffer-annotations-1.14.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-simple/1.7.25/8dacf9514f0c707cbbcdd6fd699e8940d42fb54e/slf4j-simple-1.7.25.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-javafx-test/2.13.0/817733ba5e16bbd1d4cab16ee103eca19a7f1714/griffon-javafx-test-2.13.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-core-test/2.13.0/a54fa79774c08ebf8847591f2a6329102cdab686/griffon-core-test-2.13.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.spockframework/spock-core/1.1-groovy-2.4/1c42014d4a18995d5d4aa10a4e060e88f60fdf78/spock-core-1.1-groovy-2.4.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.awaitility/awaitility-groovy/2.0.0/a09b8949454bffb5e3b8f8ba86396da57dcb0cfe/awaitility-groovy-2.0.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.testfx/testfx-core/4.0.5-alpha/5912b4581ddca4e6ebc5b5201da1b03741bf6eb3/testfx-core-4.0.5-alpha.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/annotations/3.0.1u2/89a670596c98e416fb2583c08ae34cc5c3ce2097/annotations-3.0.1u2.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.awaitility/awaitility/3.0.0/7e6b79f2b1e57eaa967b229791f31ca55aea668a/awaitility-3.0.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-library/1.3/4785a3c21320980282f9f33d0d1264a69040538f/hamcrest-library-1.3.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/net.jcip/jcip-annotations/1.0/afba4942caaeaf46aab0b976afd57cc7c181467e/jcip-annotations-1.0.jar"/>
+<listEntry value="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.objenesis/objenesis/2.5.1/272bab9a4e5994757044d1fc43ce480c8cb907a4/objenesis-2.5.1.jar"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="org.codehaus.groovy.tools.GroovyStarter"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="--classpath &quot;${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/.apt_generated:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/griffon-app/conf:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/griffon-app/controllers:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/griffon-app/i18n:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/griffon-app/lifecycle:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/griffon-app/models:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/griffon-app/resources:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/griffon-app/services:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/griffon-app/views:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/src/functional-test/groovy:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/src/integration-test/groovy:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/src/main/groovy:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/src/main/java:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/src/main/resources:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/src/test/groovy:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/src/test/java:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/src/test/resources:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/bin/default:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/bin/functionalTest:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/bin/integrationTest:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/bin/main:${workspace_loc:/griffonGroovyJavaFxDBaccessSample}/bin/test&quot; --main groovy.ui.GroovyMain &quot;${resource_loc:/griffonGroovyJavaFxDBaccessSample/src/main/groovy/de/dumischbaenger/Launcher.groovy}&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="griffonGroovyJavaFxDBaccessSample"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dgroovy.home=&quot;${groovy_home}&quot;"/>
+<stringAttribute key="org.eclipse.jdt.launching.WORKING_DIRECTORY" value="${workspace_loc:/griffonGroovyJavaFxDBaccessSample}"/>
+</launchConfiguration>
