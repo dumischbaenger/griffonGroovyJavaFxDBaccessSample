@@ -20,7 +20,11 @@ class GriffonGroovyJavaFxDBaccessSampleController extends AbstractGriffonControl
     println("clickAction")
     
     String helper=model.clickCount ? model.clickCount : "0"
-    int count = helper.toInteger()
+    int count = 0
+    try {
+      count=helper.toInteger()
+    } catch (Exception e) {
+    }
     model.clickCount = String.valueOf(count + 1)
   }
 }

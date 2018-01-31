@@ -7,9 +7,11 @@ import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
+import groovy.swing.factory.VGlueFactory
 import javafx.fxml.FXML
 import javafx.scene.Scene
 import javafx.scene.control.TextField
+import javafx.scene.layout.VBox
 import javafx.stage.Stage
 
 @ArtifactProviderFor(GriffonView)
@@ -19,8 +21,12 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
   @MVCMember @Nonnull
   GriffonGroovyJavaFxDBaccessSampleModel model
 
+  @FXML
+  VBox vbox
   @FXML 
   TextField countText
+  
+  
   
   void initUI() {
     Stage stage = (Stage) getApplication()
@@ -30,7 +36,7 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
     stage.setWidth(400);
     stage.setHeight(120);
 
-    def node = loadFromFXML()
+    VBox node = loadFromFXML()
     Scene scene = new Scene(node);
 
     stage.setScene(scene);

@@ -1,6 +1,6 @@
 application {
     title = 'griffon-groovy-java-fx-dbaccess-sample'
-    startupGroups = ['griffonGroovyJavaFxDBaccessSample']
+    startupGroups = ['griffonGroovyJavaFxDBaccessSample', 'searcher']
     autoShutdown = true
 }
 mvcGroups {
@@ -9,5 +9,10 @@ mvcGroups {
         model      = 'de.dumischbaenger.GriffonGroovyJavaFxDBaccessSampleModel'
         view       = 'de.dumischbaenger.GriffonGroovyJavaFxDBaccessSampleView'
         controller = 'de.dumischbaenger.GriffonGroovyJavaFxDBaccessSampleController'
+    }
+    'searcher' {
+        model      = 'de.dumischbaenger.SearcherModel'
+        view       = 'de.dumischbaenger.SearcherView'
+        controller = 'de.dumischbaenger.SearcherController'
     }
 }
