@@ -23,16 +23,21 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
 
   @FXML
   VBox vbox
-  @FXML 
+  @FXML
   TextField countText
-  
-  
-  
+
+  @Override
+  public void mvcGroupInit(@Nonnull Map<String, Object> args) {
+    println("GriffonGroovyJavaFxDBaccessSampleView mvcGroupInit")
+    createMVCGroup("searchBar");
+  }
+
   void initUI() {
+    println("GriffonGroovyJavaFxDBaccessSampleView initUI")
     Stage stage = (Stage) getApplication()
         .createApplicationContainer(Collections.<String, Object>emptyMap());
     stage.setTitle(getApplication().getMessageSource()
-                .getMessage('application.title', "GriffonGroovyJavaFxDBaccessSample"))
+        .getMessage('application.title', "GriffonGroovyJavaFxDBaccessSample"))
     stage.setWidth(400);
     stage.setHeight(120);
 
@@ -43,7 +48,7 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
     getApplication().getWindowManager().attach("mainWindow", stage);
     connectActions(node, controller);
     connectMessageSource(node);
-    
+
     model.clickCount().bindBidirectional(countText.textProperty());
   }
 }

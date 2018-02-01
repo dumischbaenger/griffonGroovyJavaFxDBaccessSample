@@ -1,6 +1,6 @@
 application {
     title = 'griffon-groovy-java-fx-dbaccess-sample'
-    startupGroups = ['griffonGroovyJavaFxDBaccessSample','searchBar']
+    startupGroups = ['griffonGroovyJavaFxDBaccessSample']
     autoShutdown = true
 }
 mvcGroups {

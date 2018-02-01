@@ -16,8 +16,7 @@ class SearchBarController extends AbstractGriffonController {
 
     @ControllerAction
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
-    void click() {
-        int count = model.clickCount.toInteger()
-        model.clickCount = String.valueOf(count + 1)
+    void search() {
+      println("SearchBarController search")
     }
 }

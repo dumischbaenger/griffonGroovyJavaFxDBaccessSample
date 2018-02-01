@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import griffon.javafx.support.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.TextField?>
+<?import griffon.javafx.support.*?>
 
-<ButtonBar fx:id="searchbar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.151">
+<ButtonBar fx:id="searchbar" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="233.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.SearchBarView">
   <buttons>
       <TextField fx:id="searchName" />
-    <Button fx:id="searchButton" mnemonicParsing="false" text="Search" />
+    <Button fx:id="searchButton" JavaFXUtils.griffonActionId="search" JavaFXUtils.i18nDefaultValue="Search" JavaFXUtils.i18nKey="search.button" mnemonicParsing="false" prefHeight="25.0" text="Search" />
   </buttons>
 </ButtonBar>
