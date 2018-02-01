@@ -7,21 +7,16 @@ import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
-import javafx.scene.Scene
 import javafx.scene.control.ButtonBar
 
 @ArtifactProviderFor(GriffonView)
-class SearcherView extends AbstractJavaFXGriffonView {
+class SearchBarView extends AbstractJavaFXGriffonView {
     @MVCMember @Nonnull
-    FactoryBuilderSupport builder
+    SearchBarController controller
     @MVCMember @Nonnull
-    SearcherController controller
-    @MVCMember @Nonnull
-    SearcherModel model
-    
-    
+    SearchBarModel model
 
     void initUI() {
-      ButtonBar node = loadFromFXML()
+        ButtonBar node = loadFromFXML()
     }
 }

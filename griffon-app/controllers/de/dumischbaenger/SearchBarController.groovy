@@ -10,9 +10,9 @@ import javax.annotation.Nonnull
 import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController
 
 @ArtifactProviderFor(GriffonController)
-class SearcherController extends AbstractGriffonController {
+class SearchBarController extends AbstractGriffonController {
     @MVCMember @Nonnull
-    SearcherModel model
+    SearchBarModel model
 
     @ControllerAction
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)

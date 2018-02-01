@@ -7,14 +7,14 @@ import org.junit.Test
 
 import static org.junit.Assert.fail
 
-@TestFor(SearcherController)
-class SearcherControllerTest {
+@TestFor(SearchBarController)
+class SearchBarControllerTest {
     static {
         // force initialization JavaFX Toolkit
         new javafx.embed.swing.JFXPanel()
     }
 
-    private SearcherController controller
+    private SearchBarController controller
 
     @Rule
     public final GriffonUnitRule griffon = new GriffonUnitRule()
