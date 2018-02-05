@@ -30,6 +30,7 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
   public void mvcGroupInit(@Nonnull Map<String, Object> args) {
     println("GriffonGroovyJavaFxDBaccessSampleView mvcGroupInit")
     createMVCGroup("searchBar");
+    createMVCGroup("personDetail");
   }
 
   void initUI() {

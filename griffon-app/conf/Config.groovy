@@ -15,4 +15,9 @@ mvcGroups {
         view       = 'de.dumischbaenger.SearchBarView'
         controller = 'de.dumischbaenger.SearchBarController'
     }
+    'personDetail' {
+        model      = 'de.dumischbaenger.PersonDetailModel'
+        view       = 'de.dumischbaenger.PersonDetailView'
+        controller = 'de.dumischbaenger.PersonDetailController'
+    }
 }

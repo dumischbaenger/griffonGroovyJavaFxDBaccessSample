@@ -1,13 +1,15 @@
 package de.dumischbaenger
 
+import javax.annotation.Nonnull
+
+import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController
+
+import de.dumischbaenger.domainmodel.Person
 import griffon.core.artifact.GriffonController
 import griffon.core.controller.ControllerAction
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
 import griffon.transform.Threading
-import javax.annotation.Nonnull
-
-import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController
 
 @ArtifactProviderFor(GriffonController)
 class SearchBarController extends AbstractGriffonController {
@@ -18,5 +20,13 @@ class SearchBarController extends AbstractGriffonController {
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     void search() {
       println("SearchBarController search")
+      
+      PersonDetailController personDetailController=application.mvcGroupManager.controllers["personDetail"]
+      Person p=new Person();
+      p.id=3
+      p.name="ttt"
+      p.age=5
+      p.gender=17
+      personDetailController.showPerson(p)
     }
 }
