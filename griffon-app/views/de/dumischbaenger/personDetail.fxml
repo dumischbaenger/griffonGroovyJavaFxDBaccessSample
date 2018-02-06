@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane fx:id="personDetail" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.SearchBarView">
+   <children>
+      <Label layoutX="36.0" layoutY="21.0" text="Name" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="21.0" />
+      <TextField fx:id="personName" layoutX="87.0" layoutY="16.0" prefHeight="25.0" prefWidth="155.0" AnchorPane.leftAnchor="87.0" AnchorPane.topAnchor="16.0" />
+      <Label layoutX="257.0" layoutY="21.0" text="Age" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="21.0" />
+      <TextField fx:id="personAge" layoutX="302.0" layoutY="16.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="16.0" />
+   </children>
+</AnchorPane>
