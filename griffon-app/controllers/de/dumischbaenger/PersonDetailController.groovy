@@ -14,10 +14,15 @@ import griffon.transform.Threading
 class PersonDetailController extends AbstractGriffonController {
     @MVCMember @Nonnull
     PersonDetailModel model
+    
+    @MVCMember @Nonnull
+    PersonDetailView view
 
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     void showPerson(Person p) {
       println("PersonDetailController showPerson")
       model.setPerson(p)
+      
+//      println("bind da: $view.personGender.getSelectionModel().getSelectedItem()")
     }
 }

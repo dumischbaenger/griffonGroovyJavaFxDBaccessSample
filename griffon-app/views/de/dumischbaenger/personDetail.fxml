@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import griffon.javafx.support.*?>
 
-<AnchorPane fx:id="personDetail" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="61.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.SearchBarView">
+
+<AnchorPane fx:id="personDetail" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="96.0" prefWidth="479.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.SearchBarView">
    <children>
-      <Label layoutX="36.0" layoutY="21.0" text="Name" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="21.0" />
-      <TextField fx:id="personName" layoutX="87.0" layoutY="16.0" prefHeight="25.0" prefWidth="155.0" AnchorPane.leftAnchor="87.0" AnchorPane.topAnchor="16.0" />
-      <Label layoutX="257.0" layoutY="21.0" text="Age" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="21.0" />
+      <Label JavaFXUtils.i18nDefaultValue="Id" JavaFXUtils.i18nKey="personDetail.label.id" layoutX="36.0" layoutY="21.0" text="Id" AnchorPane.leftAnchor="36.0" AnchorPane.topAnchor="21.0" />
+      <TextField fx:id="personName" layoutX="85.0" layoutY="53.0" prefHeight="25.0" prefWidth="155.0" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="53.0" />
+      <Label JavaFXUtils.i18nDefaultValue="Age" JavaFXUtils.i18nKey="personDetail.label.age" layoutX="257.0" layoutY="21.0" text="Age" AnchorPane.rightAnchor="199.0" AnchorPane.topAnchor="21.0" />
       <TextField fx:id="personAge" layoutX="302.0" layoutY="16.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="16.0" />
+      <TextField fx:id="personId" layoutX="85.0" layoutY="16.0" prefHeight="25.0" prefWidth="155.0" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="16.0" />
+      <Label JavaFXUtils.i18nDefaultValue="Name" JavaFXUtils.i18nKey="personDetail.label.name" layoutX="36.0" layoutY="58.0" text="Name" />
+      <Label JavaFXUtils.i18nDefaultValue="Gender" JavaFXUtils.i18nKey="personDetail.label.gender" layoutX="257.0" layoutY="58.0" text="Gender" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="58.0" />
+      <ComboBox fx:id="personGender" layoutX="305.0" layoutY="53.0" prefWidth="150.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="53.0" />
    </children>
 </AnchorPane>

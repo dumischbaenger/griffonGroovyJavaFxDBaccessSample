@@ -39,8 +39,8 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
         .createApplicationContainer(Collections.<String, Object>emptyMap());
     stage.setTitle(getApplication().getMessageSource()
         .getMessage('application.title', "GriffonGroovyJavaFxDBaccessSample"))
-    stage.setWidth(400);
-    stage.setHeight(120);
+    stage.setWidth(600);
+    stage.setHeight(400);
 
     VBox node = loadFromFXML()
     Scene scene = new Scene(node);
