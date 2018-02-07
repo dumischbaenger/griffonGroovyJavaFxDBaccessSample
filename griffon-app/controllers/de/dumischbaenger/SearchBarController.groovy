@@ -26,7 +26,7 @@ class SearchBarController extends AbstractGriffonController {
       p.id=3
       p.name="ttt"
       p.age=5
-      p.gender=17
+      p.gender=1
       personDetailController.showPerson(p)
     }
 }

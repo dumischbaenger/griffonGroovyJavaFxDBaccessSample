@@ -39,14 +39,6 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
   @FXML
   ComboBox personGender
 
-  class Gender {
-    Integer id
-    String name
-    public Gender(Integer _id, String _name) {
-      id=_id
-      name=_name
-    }
-  }
 
   @Override
   public void mvcGroupInit(@Nonnull Map<String, Object> args) {
@@ -64,10 +56,7 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
 
     parentView.vbox.getChildren().add(personDetail)
     ObservableList<Gender> genders = FXCollections.observableArrayList();
-    genders.addAll(
-        new Gender(1, "male"),
-        new Gender(2, "female")
-        );
+    genders.addAll(model.genders.values());
 
 
     personGender.setItems(genders);
@@ -82,13 +71,15 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
       }
     })
 
-
     //      model.personModel.name().bindBidirectional(personName.textProperty());
     //      model.personModel.age().bindBidirectional(personAge.textProperty(), new NumberStringConverter());
     //      personAge.textProperty().bindBidirectional(model.personModel.age,new NumberStringConverter())
     Bindings.bindBidirectional(personId.textProperty(), model.personModel.id(), new NumberStringConverter());
     Bindings.bindBidirectional(personName.textProperty(), model.personModel.name())
     Bindings.bindBidirectional(personAge.textProperty(), model.personModel.age(), new NumberStringConverter());
-
+    def xxx=personGender.valueProperty()
+    println("")
+    Bindings.bindBidirectional(personGender.valueProperty(), model.personModel.gender());
+    
   }
 }
