@@ -28,13 +28,15 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
 
   @Override
   public void mvcGroupInit(@Nonnull Map<String, Object> args) {
-    println("GriffonGroovyJavaFxDBaccessSampleView mvcGroupInit")
+    log.info("GriffonGroovyJavaFxDBaccessSampleView mvcGroupInit")
+    
     createMVCGroup("searchBar");
     createMVCGroup("personDetail");
   }
 
   void initUI() {
-    println("GriffonGroovyJavaFxDBaccessSampleView initUI")
+    log.info("GriffonGroovyJavaFxDBaccessSampleView initUI")
+    
     Stage stage = (Stage) getApplication()
         .createApplicationContainer(Collections.<String, Object>emptyMap());
     stage.setTitle(getApplication().getMessageSource()

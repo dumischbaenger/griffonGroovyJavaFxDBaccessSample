@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<!--
+<?import griffon.javafx.support.*?>
+-->
+<?import griffon.javafx.support.*?>
+
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import griffon.javafx.support.*?>
 
 <AnchorPane fx:id="personDetail" maxHeight="-Infinity" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="133.0" prefWidth="495.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.PersonDetailView">
    <children>
@@ -17,6 +22,11 @@
       <Label layoutX="29.0" layoutY="91.0" text="Name" JavaFXUtils.i18nDefaultValue="Name" JavaFXUtils.i18nKey="personDetail.label.name" />
       <Label layoutX="260.0" layoutY="91.0" text="Gender" AnchorPane.rightAnchor="187.0" AnchorPane.topAnchor="91.0" JavaFXUtils.i18nDefaultValue="Gender" JavaFXUtils.i18nKey="personDetail.label.gender" />
       <ComboBox fx:id="personGender" layoutX="314.0" layoutY="86.0" prefWidth="150.0" AnchorPane.rightAnchor="31.0" AnchorPane.topAnchor="86.0" />
-      <Button JavaFXUtils.griffonActionId="save" JavaFXUtils.i18nDefaultValue="Save" JavaFXUtils.i18nKey="personDetails.button.save" layoutX="78.0" layoutY="14.0" mnemonicParsing="false" text="Save" AnchorPane.leftAnchor="78.0" AnchorPane.topAnchor="14.0" />
+      <ButtonBar layoutX="58.0" layoutY="13.0" prefHeight="25.0" prefWidth="154.0" AnchorPane.leftAnchor="58.0" AnchorPane.topAnchor="13.0">
+        <buttons>
+            <Button fx:id="personSave" mnemonicParsing="false" text="Save" JavaFXUtils.griffonActionId="save" JavaFXUtils.i18nDefaultValue="Save" JavaFXUtils.i18nKey="personDetails.button.save" />
+            <Button fx:id="personNew" mnemonicParsing="false" text="New" JavaFXUtils.griffonActionId="createNew" JavaFXUtils.i18nDefaultValue="New" JavaFXUtils.i18nKey="personDetails.button.new" />
+        </buttons>
+      </ButtonBar>
    </children>
 </AnchorPane>

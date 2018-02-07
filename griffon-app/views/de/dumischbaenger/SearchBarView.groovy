@@ -30,12 +30,12 @@ class SearchBarView extends AbstractJavaFXGriffonView {
 
     @Override
     public void mvcGroupInit(@Nonnull Map<String, Object> args) {
-      println("searchBar mvcGroupInit")
-      
+      log.info("searchBar mvcGroupInit")
     }
   
     void initUI() {
-      println("searchBar initUI")
+      log.info("searchBar initUI")
+      
       loadFromFXML()
       searchbar.setBackground(new Background(new BackgroundFill(Color
         .rgb(17, 119, 255), CornerRadii.EMPTY, Insets.EMPTY)));

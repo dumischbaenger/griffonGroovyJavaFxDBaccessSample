@@ -19,14 +19,6 @@ class SearchBarController extends AbstractGriffonController {
     @ControllerAction
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     void search() {
-      println("SearchBarController search")
-      
-      PersonDetailController personDetailController=application.mvcGroupManager.controllers["personDetail"]
-      Person p=new Person();
-      p.id=3
-      p.name="ttt"
-      p.age=5
-      p.gender=1
-      personDetailController.showPerson(p)
+      log.info("SearchBarController search")
     }
 }

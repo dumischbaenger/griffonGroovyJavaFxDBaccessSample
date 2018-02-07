@@ -70,6 +70,14 @@ jfx {
 dependencies {
     compile "org.codehaus.griffon:griffon-guice:${griffon.version}"
 
+//    runtime('org.apache.logging.log4j:log4j-core:2.10.0') {
+//      exclude group: 'ant',         module: 'ant-nodeps'
+//      exclude group: 'ant',         module: 'ant-junit'
+//      exclude group: 'ant-contrib', module: 'ant-contrib'
+//    }
+//  
+//    runtime 'org.apache.logging.log4j:log4j-slf4j-impl:2.10.0'
+    
     runtime "org.slf4j:slf4j-simple:${slf4jVersion}"
 
     testCompile "org.codehaus.griffon:griffon-javafx-test:${griffon.version}"

@@ -42,12 +42,13 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
 
   @Override
   public void mvcGroupInit(@Nonnull Map<String, Object> args) {
-    println("PersonDetailView mvcGroupInit")
+    log.info("PersonDetailView mvcGroupInit")
   }
 
 
   void initUI() {
-    println("PersonDetailView initUI")
+    log.info("PersonDetailView initUI")
+    
     loadFromFXML()
     //      personDetail.setBackground(new Background(new BackgroundFill(Color
     //        .rgb(17, 119, 255), CornerRadii.EMPTY, Insets.EMPTY)));
@@ -77,8 +78,6 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
     Bindings.bindBidirectional(personId.textProperty(), model.personModel.id(), new NumberStringConverter());
     Bindings.bindBidirectional(personName.textProperty(), model.personModel.name())
     Bindings.bindBidirectional(personAge.textProperty(), model.personModel.age(), new NumberStringConverter());
-    def xxx=personGender.valueProperty()
-    println("")
     Bindings.bindBidirectional(personGender.valueProperty(), model.personModel.gender());
     
   }

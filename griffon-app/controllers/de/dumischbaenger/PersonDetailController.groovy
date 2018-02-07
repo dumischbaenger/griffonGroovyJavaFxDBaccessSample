@@ -21,15 +21,30 @@ class PersonDetailController extends AbstractGriffonController {
 
     @ControllerAction
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
+    void createNew() {
+      log.info("PersonDetailController createNew")
+      
+      Person p=new Person();
+      p.id=0
+      p.name="enter name"
+      p.age=5
+      p.gender=1
+      showPerson(p)
+      
+//      println("bin da: " + model.personModel.gender.name)
+    }
+
+    @ControllerAction
+    @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     void save() {
-      println("PersonDetailController save")
+      log.info("PersonDetailController save")
       
       println("bin da: " + model.personModel.gender.name)
     }
 
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     void showPerson(Person p) {
-      println("PersonDetailController showPerson")
+      log.info("PersonDetailController showPerson")
       model.setPerson(p)
       
 //      println("bind da: $view.personGender.getSelectionModel().getSelectedItem()")
