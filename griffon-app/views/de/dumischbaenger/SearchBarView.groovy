@@ -8,12 +8,7 @@ import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
 import javafx.fxml.FXML
-import javafx.geometry.Insets
-import javafx.scene.control.ButtonBar
-import javafx.scene.layout.Background
-import javafx.scene.layout.BackgroundFill
-import javafx.scene.layout.CornerRadii
-import javafx.scene.paint.Color
+import javafx.scene.layout.HBox
 
 @ArtifactProviderFor(GriffonView)
 class SearchBarView extends AbstractJavaFXGriffonView {
@@ -26,7 +21,7 @@ class SearchBarView extends AbstractJavaFXGriffonView {
     GriffonGroovyJavaFxDBaccessSampleView parentView
     
     @FXML
-    ButtonBar searchbar
+    HBox searchbar
 
     @Override
     public void mvcGroupInit(@Nonnull Map<String, Object> args) {
@@ -37,8 +32,8 @@ class SearchBarView extends AbstractJavaFXGriffonView {
       log.info("searchBar initUI")
       
       loadFromFXML()
-      searchbar.setBackground(new Background(new BackgroundFill(Color
-        .rgb(17, 119, 255), CornerRadii.EMPTY, Insets.EMPTY)));
+//      searchbar.setBackground(new Background(new BackgroundFill(Color
+//        .rgb(17, 119, 255), CornerRadii.EMPTY, Insets.EMPTY)));
       connectActions(searchbar, controller);
       connectMessageSource(searchbar);
   
