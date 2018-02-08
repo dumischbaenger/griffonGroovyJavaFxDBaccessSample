@@ -1,11 +1,13 @@
-persistenceUnit {
+persistenceUnits {
+  exampledb {
     factory {
     }
     entitiyManager {
     }
+  }
 }
 
-connect_on_startup=true
+//connect_on_startup=true
 
 environments {
   development {
