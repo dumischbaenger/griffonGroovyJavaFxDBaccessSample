@@ -19,6 +19,9 @@ class PersonDetailController extends AbstractGriffonController {
     @MVCMember @Nonnull
     PersonDetailView view
 
+    @javax.inject.Inject
+    private PersonService personService
+    
     @ControllerAction
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     void createNew() {
@@ -39,7 +42,14 @@ class PersonDetailController extends AbstractGriffonController {
     void save() {
       log.info("PersonDetailController save")
       
-      println("bin da: " + model.personModel.gender.name)
+//      println("bin da: " + model.personModel.gender.name)
+      
+     new File('persistence.txt').withWriter('utf-8') {
+        writer -> writer.writeLine 'Hello World'
+     }
+      personService.getPersonName(1)
+      
+      
     }
 
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
