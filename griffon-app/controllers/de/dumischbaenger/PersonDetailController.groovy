@@ -44,10 +44,12 @@ class PersonDetailController extends AbstractGriffonController {
       
 //      println("bin da: " + model.personModel.gender.name)
       
-     new File('persistence.txt').withWriter('utf-8') {
-        writer -> writer.writeLine 'Hello World'
-     }
-      personService.getPersonName(1)
+//     new File('persistence.txt').withWriter('utf-8') {
+//        writer -> writer.writeLine 'Hello World'
+//     }
+      def res=personService.getPersonName(1)
+      
+      println(res)
       
       
     }

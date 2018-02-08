@@ -16,8 +16,10 @@ class PersonService extends AbstractGriffonService {
   private EntityManagerHandler entityManagerHandler
 
   String getPersonName(int id) {
-       entityManagerHandler.withEntityManager { String persistenceUnitName, EntityManager entityManager ->
-           entityManager.createQuery('select p from Person p').singleResult?.name ?: null
+       entityManagerHandler.withEntityManager { 
+         String persistenceUnitName, EntityManager entityManager ->
+//         entityManager.createQuery('select p from Person p').singleResult?.name ?: null
+         entityManager.createQuery('select p from TestPerson p').singleResult?.summary ?: null
        }
   }
 }
