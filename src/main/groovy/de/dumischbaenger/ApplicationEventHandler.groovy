@@ -15,4 +15,10 @@ class ApplicationEventHandler implements EventHandler {
 		println application.startupArgs
 	}
 
+  void onJpaDisconnectEnd(String persistenceUnitName, Map<String, Object> config) {
+//    log.info()
+//    log.info("event onJpaDisconnectEnd $persistenceUnitName $config")
+    
+    println("event onJpaDisconnectEnd $persistenceUnitName $config")
+  }
 }

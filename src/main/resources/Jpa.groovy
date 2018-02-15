@@ -1,8 +1,10 @@
 persistenceUnits {
   exampledb {
     factory {
+      mykey="bla"
     }
     entitiyManager {
+      mykey="bla"
     }
   }
 }

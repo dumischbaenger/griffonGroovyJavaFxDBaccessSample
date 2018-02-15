@@ -19,6 +19,7 @@ class SearchBarController extends AbstractGriffonController {
     @ControllerAction
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     void search() {
+      def l=log
       log.info("SearchBarController search")
     }
 }
