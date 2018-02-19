@@ -28,7 +28,7 @@ class PersonDetailController extends AbstractGriffonController {
       log.info("PersonDetailController createNew")
       
       Person p=new Person();
-      p.id=0
+//      p.id=0
       p.name="enter name"
       p.age=5
       p.gender=1
