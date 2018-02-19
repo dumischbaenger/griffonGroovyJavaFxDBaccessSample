@@ -4,6 +4,8 @@ import javax.annotation.Nonnull
 
 import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView
 
+import de.dumischbaenger.domainmodel.Gender
+import de.dumischbaenger.domainmodel.Person
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
@@ -57,7 +59,7 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
 
     parentView.vbox.getChildren().add(personDetail)
     ObservableList<Gender> genders = FXCollections.observableArrayList();
-    genders.addAll(model.genders.values());
+    genders.addAll(Gender.genders.values());
 
 
     personGender.setItems(genders);
@@ -75,10 +77,17 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
     //      model.personModel.name().bindBidirectional(personName.textProperty());
     //      model.personModel.age().bindBidirectional(personAge.textProperty(), new NumberStringConverter());
     //      personAge.textProperty().bindBidirectional(model.personModel.age,new NumberStringConverter())
-    Bindings.bindBidirectional(personId.textProperty(), model.personModel.id(), new NumberStringConverter());
-    Bindings.bindBidirectional(personName.textProperty(), model.personModel.name())
-    Bindings.bindBidirectional(personAge.textProperty(), model.personModel.age(), new NumberStringConverter());
-    Bindings.bindBidirectional(personGender.valueProperty(), model.personModel.gender());
-    
+//    Bindings.bindBidirectional(personId.textProperty(), model.personModel.id(), new NumberStringConverter());
+//    Bindings.bindBidirectional(personName.textProperty(), model.personModel.name())
+//    Bindings.bindBidirectional(personAge.textProperty(), model.personModel.age(), new NumberStringConverter());
+//    Bindings.bindBidirectional(personGender.valueProperty(), model.personModel.gender());
+  }
+  
+  void showPerson(Person p) {
+    //todo unbind
+    Bindings.bindBidirectional(personId.textProperty(), p.idProperty, new NumberStringConverter());
+    Bindings.bindBidirectional(personName.textProperty(), p.nameProperty)
+    Bindings.bindBidirectional(personAge.textProperty(), p.ageProperty, new NumberStringConverter());
+    Bindings.bindBidirectional(personGender.valueProperty(), p.genderProperty);
   }
 }

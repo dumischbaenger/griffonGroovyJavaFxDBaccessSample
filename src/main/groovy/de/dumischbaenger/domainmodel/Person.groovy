@@ -11,8 +11,10 @@ import javax.persistence.Transient
 import groovy.transform.EqualsAndHashCode
 import javafx.beans.property.IntegerProperty
 import javafx.beans.property.LongProperty
+import javafx.beans.property.ObjectProperty
 import javafx.beans.property.SimpleIntegerProperty
 import javafx.beans.property.SimpleLongProperty
+import javafx.beans.property.SimpleObjectProperty
 import javafx.beans.property.SimpleStringProperty
 import javafx.beans.property.StringProperty
 
@@ -27,7 +29,7 @@ class Person {
   @Transient
   private final IntegerProperty ageProperty=new SimpleIntegerProperty()
   @Transient
-  private final IntegerProperty genderPropery=new SimpleIntegerProperty()
+  private final ObjectProperty genderProperty=new SimpleObjectProperty()
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -53,10 +55,10 @@ class Person {
   }
 
   public Integer getGender() {
-    return ageProperty.getValue()
+    return genderProperty.getValue().id
   }
   public void setGender(Integer v) {
-    ageProperty.setValue(v)
+    genderProperty.setValue(Gender.genders[v])
   }
 
   String toString() { "$id $name : age $age, gender $gender" }

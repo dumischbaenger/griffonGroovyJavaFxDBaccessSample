@@ -58,6 +58,7 @@ class PersonDetailController extends AbstractGriffonController {
     void showPerson(Person p) {
       log.info("PersonDetailController showPerson")
       model.setPerson(p)
+      view.showPerson(p)
       
 //      println("bind da: $view.personGender.getSelectionModel().getSelectedItem()")
 //      def sel=view.personGender.selectionModel.selectedItem
