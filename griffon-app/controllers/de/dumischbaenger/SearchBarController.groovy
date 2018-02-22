@@ -15,11 +15,14 @@ import griffon.transform.Threading
 class SearchBarController extends AbstractGriffonController {
     @MVCMember @Nonnull
     SearchBarModel model
+    
+    @javax.inject.Inject
+    private PersonService personService
 
     @ControllerAction
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     void search() {
-      def l=log
       log.info("SearchBarController search")
+      personService.searchPersons([:])
     }
 }

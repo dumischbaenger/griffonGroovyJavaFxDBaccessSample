@@ -27,14 +27,8 @@ class PersonDetailController extends AbstractGriffonController {
     void createNew() {
       log.info("PersonDetailController createNew")
       
-      Person p=new Person();
-//      p.id=0
-      p.name="enter name"
-      p.age=5
-      p.gender=1
+      Person p=personService.newPerson()
       showPerson(p)
-      
-//      println("bin da: " + model.personModel.gender.name)
     }
 
     @ControllerAction
@@ -42,15 +36,7 @@ class PersonDetailController extends AbstractGriffonController {
     void save() {
       log.info("PersonDetailController save")
       
-//      println("bin da: " + model.personModel.gender.name)
-      
-//     new File('persistence.txt').withWriter('utf-8') {
-//        writer -> writer.writeLine 'Hello World'
-//     }
-      def res=personService.getPersonName(1)
-      
-      println(res)
-      
+      personService.savePerson(model.person)
       
     }
 
