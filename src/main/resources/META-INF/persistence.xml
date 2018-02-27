@@ -17,6 +17,7 @@
             <property name="javax.persistence.jdbc.user" value="test" />
             <property name="javax.persistence.jdbc.password" value="test" />
 
+            <!-- <property name="hibernate.dialect" value="org.hibernate.dialect.DerbyDialect" /> -->
             <property name="hibernate.show_sql" value="true"/>
             <property name="hibernate.format_sql" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>

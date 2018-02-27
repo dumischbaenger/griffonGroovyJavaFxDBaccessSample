@@ -6,6 +6,7 @@ import javax.persistence.Entity
 import javax.persistence.GeneratedValue
 import javax.persistence.GenerationType
 import javax.persistence.Id
+import javax.persistence.SequenceGenerator
 import javax.persistence.Transient
 
 import groovy.transform.EqualsAndHashCode
@@ -32,7 +33,8 @@ class Person {
   private final ObjectProperty genderProperty=new SimpleObjectProperty()
 
   @Id
-  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @GeneratedValue(generator = "person_seq", strategy = GenerationType.SEQUENCE)
+  @SequenceGenerator(name = "person_seq", sequenceName = "person_seq", allocationSize=2,initialValue=1)
   public Long getId() {
     return idProperty.getValue()
   }

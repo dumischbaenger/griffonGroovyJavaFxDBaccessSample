@@ -43,8 +43,8 @@ class PersonDetailController extends AbstractGriffonController {
     @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
     void showPerson(Person p) {
       log.info("PersonDetailController showPerson")
-      model.setPerson(p)
       view.showPerson(p)
+      model.setPerson(p)
       
 //      println("bind da: $view.personGender.getSelectionModel().getSelectedItem()")
 //      def sel=view.personGender.selectionModel.selectedItem
