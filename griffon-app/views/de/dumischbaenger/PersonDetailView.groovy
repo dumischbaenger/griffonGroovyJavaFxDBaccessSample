@@ -86,14 +86,14 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
   void showPerson(Person p) {
     if(model.person!=null) {
       personId.textProperty().unbind()
-      Bindings.unbindBidirectional(personName.textProperty(), p.nameProperty)
-      Bindings.unbindBidirectional(personAge.textProperty(), p.ageProperty);
-      Bindings.unbindBidirectional(personGender.valueProperty(), p.genderProperty);
+      Bindings.unbindBidirectional(personName.textProperty(), model.person.nameProperty)
+      Bindings.unbindBidirectional(personAge.textProperty(), model.person.ageProperty)
+      Bindings.unbindBidirectional(personGender.valueProperty(), model.person.genderProperty)
     }
     
     personId.textProperty().bind(p.idProperty.asString())
     Bindings.bindBidirectional(personName.textProperty(), p.nameProperty)
-    Bindings.bindBidirectional(personAge.textProperty(), p.ageProperty, new NumberStringConverter());
-    Bindings.bindBidirectional(personGender.valueProperty(), p.genderProperty);
+    Bindings.bindBidirectional(personAge.textProperty(), p.ageProperty, new NumberStringConverter())
+    Bindings.bindBidirectional(personGender.valueProperty(), p.genderProperty)
   }
 }

@@ -25,7 +25,13 @@ class JpaPlayGround {
     p2.name="p2"
     p2.gender=1
     em.persist(p2);
+    
+    if(p1.equals(p2)) {
+      println("p1 and p2 are equal")
+    }
 
+    println("hashCode: " + p1.hashCode())
+    
     em.getTransaction().commit();
 
     emf.close();
