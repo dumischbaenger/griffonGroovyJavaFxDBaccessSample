@@ -1,4 +1,4 @@
-package ${project_package}
+package de.dumischbaenger
 
 import griffon.javafx.test.GriffonTestFXRule
 import org.junit.Rule
@@ -6,7 +6,7 @@ import org.junit.Test
 
 import static org.junit.Assert.fail
 
-class ${project_class_name}IntegrationTest {
+class PersonListIntegrationTest {
     @Rule
     public GriffonTestFXRule testfx = new GriffonTestFXRule('mainWindow')
 

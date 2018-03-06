@@ -20,4 +20,9 @@ mvcGroups {
         view       = 'de.dumischbaenger.PersonDetailView'
         controller = 'de.dumischbaenger.PersonDetailController'
     }
+    'personList' {
+        model      = 'de.dumischbaenger.PersonListModel'
+        view       = 'de.dumischbaenger.PersonListView'
+        controller = 'de.dumischbaenger.PersonListController'
+    }
 }

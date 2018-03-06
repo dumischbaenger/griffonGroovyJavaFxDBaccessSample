@@ -1,4 +1,4 @@
-package ${project_package}
+package de.dumischbaenger
 
 import griffon.core.test.GriffonUnitRule
 import griffon.core.test.TestFor
@@ -7,14 +7,14 @@ import org.junit.Test
 
 import static org.junit.Assert.fail
 
-@TestFor(${project_class_name})
-class ${project_class_name}Test {
+@TestFor(PersonListController)
+class PersonListControllerTest {
     static {
         // force initialization JavaFX Toolkit
         new javafx.embed.swing.JFXPanel()
     }
 
-    private ${project_class_name} ${artifact_type}
+    private PersonListController controller
 
     @Rule
     public final GriffonUnitRule griffon = new GriffonUnitRule()
