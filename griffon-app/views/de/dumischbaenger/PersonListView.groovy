@@ -32,6 +32,7 @@ class PersonListView extends AbstractJavaFXGriffonView {
     loadFromFXML()
 
     parentView.vbox.getChildren().add(rootAnchor)
+//    VBox.setVgrow(scrollPane, Priority.ALWAYS);
     
 //    connectActions(personDetail, controller);
 //    connectMessageSource(personDetail);
