@@ -27,14 +27,22 @@ class PersonListController extends AbstractGriffonController{
             log.info("PersonListController consuming event personSearchFinished")
             List persons=it[0]
             showPersons(persons)
+          } as RunnableWithArgs,
+          personCreated: {
+            log.info("PersonListController consuming event personCreated")
+            Person person=it[0]
+            showAdditionalPersons(person)
           } as RunnableWithArgs
       ])
   }
 
     void showPersons(List persons) {
       log.info("PersonListController showPersons")
-      ObservableList<Person> personData = FXCollections.observableArrayList()
-      personData.addAll(persons)
-      view.table.setItems(personData)
+      model.personsObervable = FXCollections.observableArrayList()
+      model.personsObervable.addAll(persons)
+      view.table.setItems(model.personsObervable)
+    }
+    void showAdditionalPersons(Person person) {
+      model.personsObervable.add(person)
     }
 }

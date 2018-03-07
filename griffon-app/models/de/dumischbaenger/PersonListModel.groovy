@@ -2,11 +2,12 @@ package de.dumischbaenger
 
 import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonModel
 
+import de.dumischbaenger.domainmodel.Person
 import griffon.core.artifact.GriffonModel
-import griffon.transform.FXObservable
 import griffon.metadata.ArtifactProviderFor
+import javafx.collections.ObservableList
 
 @ArtifactProviderFor(GriffonModel)
 class PersonListModel extends AbstractGriffonModel{
-    @FXObservable String clickCount = "0"
+  ObservableList<Person> personsObervable
 }

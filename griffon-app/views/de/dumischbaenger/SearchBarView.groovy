@@ -36,6 +36,10 @@ class SearchBarView extends AbstractJavaFXGriffonView {
 //        .rgb(17, 119, 255), CornerRadii.EMPTY, Insets.EMPTY)));
       connectActions(searchbar, controller);
       connectMessageSource(searchbar);
+      
+//      model.nameFilter.textProperty.
+//      personId.textProperty().unbind()
+      
   
       parentView.vbox.getChildren().add(searchbar)
     }

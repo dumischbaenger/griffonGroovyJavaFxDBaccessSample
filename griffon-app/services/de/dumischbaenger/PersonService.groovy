@@ -16,6 +16,7 @@ class PersonService extends AbstractGriffonService {
 
   @Inject
   private EntityManagerHandler entityManagerHandler
+  
 
   String getPersonName(int id) {
     entityManagerHandler.withEntityManager("exampledb"){  

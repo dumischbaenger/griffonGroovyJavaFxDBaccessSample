@@ -29,6 +29,8 @@ class PersonDetailController extends AbstractGriffonController {
       
       Person p=personService.newPerson()
       showPerson(p)
+      
+      application.eventRouter.publishEvent('personCreated', [p])
     }
 
     @ControllerAction

@@ -8,5 +8,5 @@ import griffon.metadata.ArtifactProviderFor
 
 @ArtifactProviderFor(GriffonModel)
 class SearchBarModel extends AbstractGriffonModel {
-    @FXObservable String clickCount = "0"
+    @FXObservable String nameFilter = ""
 }
