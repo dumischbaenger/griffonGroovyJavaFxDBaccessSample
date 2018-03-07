@@ -17,7 +17,7 @@ class ApplicationEventHandler implements EventHandler {
   void onBootstrapStart(GriffonApplication application) {
     log.info("ApplicationEventHandler onBootstrapStart")
 
-    println application.startupArgs
+//    println application.startupArgs
   }
 
   void onJpaDisconnectEnd(String persistenceUnitName, Map<String, Object> config) {

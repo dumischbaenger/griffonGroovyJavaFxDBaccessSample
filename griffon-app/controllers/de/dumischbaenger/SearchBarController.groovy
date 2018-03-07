@@ -24,8 +24,10 @@ class SearchBarController extends AbstractGriffonController {
     void search() {
       log.info("SearchBarController search")
       List persons=personService.searchPersons([:])
+      application.eventRouter.publishEvent('personSearchFinished', [persons])
       
-      PersonListController c = application.mvcGroupManager.findGroup('personList').getController()
-      c.showPersons(persons)
+//      //BD getPersonListController directly an and send it list of persons
+//      PersonListController c = application.mvcGroupManager.findGroup('personList').getController()
+//      c.showPersons(persons)
     }
 }

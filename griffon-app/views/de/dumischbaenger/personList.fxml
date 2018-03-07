@@ -10,14 +10,15 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="rootAnchor" prefHeight="216.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.PersonListView">
+<AnchorPane fx:id="rootAnchor" maxHeight="1.7976931348623157E308" prefHeight="216.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.PersonListView">
    <children>
       <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="20.0" layoutY="24.0" prefHeight="201.0" prefWidth="379.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
             <TableView fx:id="table" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0">
               <columns>
                 <TableColumn fx:id="columnId" prefWidth="75.0" text="Id" JavaFXUtils.i18nDefaultValue="Id" JavaFXUtils.i18nKey="personList.column.id" />
-                <TableColumn fx:id="columnName" prefWidth="75.0" text="Name" JavaFXUtils.i18nDefaultValue="Id" JavaFXUtils.i18nKey="personList.column.name"/>
+                <TableColumn fx:id="columnName" prefWidth="75.0" text="Name" JavaFXUtils.i18nDefaultValue="Id" JavaFXUtils.i18nKey="personList.column.name" />
+                  <TableColumn fx:id="columnAge" prefWidth="75.0" text="Age" JavaFXUtils.i18nDefaultValue="Age" JavaFXUtils.i18nKey="personList.column.age" />
               </columns>
             </TableView>
          </content>

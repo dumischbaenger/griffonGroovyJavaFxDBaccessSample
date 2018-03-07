@@ -34,7 +34,9 @@ class PersonListView extends AbstractJavaFXGriffonView {
     TableColumn columnId
     @FXML
     TableColumn columnName
-    
+    @FXML
+    TableColumn columnAge
+
     void initUI() {
     log.info("PersonDetailView initUI")
     
@@ -44,10 +46,21 @@ class PersonListView extends AbstractJavaFXGriffonView {
     connectMessageSource(rootAnchor);
     
     columnId.setCellValueFactory{
-      p -> 
-      p.getValue().getId()
+      personObserver -> 
+      Person p=personObserver.value
+      p.idProperty
     }
-    
+    columnName.setCellValueFactory{
+      personObserver ->
+      Person p=personObserver.value
+      p.nameProperty
+    }
+    columnAge.setCellValueFactory{
+      personObserver ->
+      Person p=personObserver.value
+      p.ageProperty
+    }
+
 //    connectActions(personDetail, controller);
 
    }
