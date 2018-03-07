@@ -19,7 +19,7 @@ class PersonDetailModel extends AbstractGriffonModel {
 
     @Override
     public void mvcGroupInit(@Nonnull Map<String, Object> args) {
-      println("PersonDetailModel mvcGroupInit")
+      log.info("PersonDetailModel mvcGroupInit")
     }
     
     public void setPerson(Person p) {

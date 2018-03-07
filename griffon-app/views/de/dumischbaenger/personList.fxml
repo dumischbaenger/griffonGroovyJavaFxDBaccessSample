@@ -4,6 +4,7 @@
 <?import griffon.javafx.support.*?>
 -->
 
+<?import griffon.javafx.support.*?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -13,10 +14,10 @@
    <children>
       <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="20.0" layoutY="24.0" prefHeight="201.0" prefWidth="379.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
-            <TableView minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0">
+            <TableView fx:id="table" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn fx:id="columnId" prefWidth="75.0" text="Id" JavaFXUtils.i18nDefaultValue="Id" JavaFXUtils.i18nKey="personList.column.id" />
+                <TableColumn fx:id="columnName" prefWidth="75.0" text="Name" JavaFXUtils.i18nDefaultValue="Id" JavaFXUtils.i18nKey="personList.column.name"/>
               </columns>
             </TableView>
          </content>
