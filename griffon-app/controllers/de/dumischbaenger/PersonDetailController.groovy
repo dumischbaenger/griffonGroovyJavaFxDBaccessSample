@@ -5,6 +5,7 @@ import javax.annotation.Nonnull
 import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController
 
 import de.dumischbaenger.domainmodel.Person
+import griffon.core.RunnableWithArgs
 import griffon.core.artifact.GriffonController
 import griffon.core.controller.ControllerAction
 import griffon.inject.MVCMember
@@ -13,44 +14,54 @@ import griffon.transform.Threading
 
 @ArtifactProviderFor(GriffonController)
 class PersonDetailController extends AbstractGriffonController {
-    @MVCMember @Nonnull
-    PersonDetailModel model
-    
-    @MVCMember @Nonnull
-    PersonDetailView view
+  @MVCMember @Nonnull
+  PersonDetailModel model
 
-    @javax.inject.Inject
-    private PersonService personService
-    
-    @ControllerAction
-    @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
-    void createNew() {
-      log.info("PersonDetailController createNew")
-      
-      Person p=personService.newPerson()
-      showPerson(p)
-      
-      application.eventRouter.publishEvent('personCreated', [p])
-    }
+  @MVCMember @Nonnull
+  PersonDetailView view
 
-    @ControllerAction
-    @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
-    void save() {
-      log.info("PersonDetailController save")
-      
-      personService.savePerson(model.person)
-      
-    }
+  @javax.inject.Inject
+  private PersonService personService
 
-    @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
-    void showPerson(Person p) {
-      log.info("PersonDetailController showPerson")
-      view.showPerson(p)
-      model.setPerson(p)
-      
-//      println("bind da: $view.personGender.getSelectionModel().getSelectedItem()")
-//      def sel=view.personGender.selectionModel.selectedItem
-//      println("bind da: ${sel?.name}")
-      
-    }
+  void mvcGroupInit(Map<String, Object> args) {
+    log.info("PersonDetailController mvcGroupInit")
+    application.eventRouter.addEventListener([
+      personDetailsShow: {
+        log.info("PersonListController consuming event personSearchFinished")
+        Person person=it[0]
+        showPerson(person)
+      } as RunnableWithArgs
+    ])
+  }
+
+  @ControllerAction
+  @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
+  void createNew() {
+    log.info("PersonDetailController createNew")
+
+    Person p=personService.newPerson()
+    showPerson(p)
+
+    application.eventRouter.publishEvent('personCreated', [p])
+  }
+
+  @ControllerAction
+  @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
+  void save() {
+    log.info("PersonDetailController save")
+
+    personService.savePerson(model.person)
+  }
+
+  @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
+  void showPerson(Person p) {
+    log.info("PersonDetailController showPerson")
+    view.showPerson(p)
+    model.setPerson(p)
+
+    //      println("bind da: $view.personGender.getSelectionModel().getSelectedItem()")
+    //      def sel=view.personGender.selectionModel.selectedItem
+    //      println("bind da: ${sel?.name}")
+
+  }
 }

@@ -8,6 +8,7 @@ import de.dumischbaenger.domainmodel.Person
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
+import javafx.beans.value.ChangeListener
 import javafx.fxml.FXML
 import javafx.scene.control.TableColumn
 import javafx.scene.control.TableView
@@ -60,6 +61,12 @@ class PersonListView extends AbstractJavaFXGriffonView {
       Person p=personObserver.value
       p.ageProperty
     }
+    
+    // Listen for selection changes and show the person details when changed.
+    table.getSelectionModel().selectedItemProperty().addListener({
+      observable, oldValue, newValue -> 
+      controller.showPersonsDetails(newValue)
+    } as ChangeListener);
 
 //    connectActions(personDetail, controller);
 
