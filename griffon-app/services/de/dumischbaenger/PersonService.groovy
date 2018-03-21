@@ -49,7 +49,7 @@ class PersonService extends AbstractGriffonService {
     p    
   }
   
-  Person savePerson(p) {
+  Person savePerson(Person p) {
     log.info("save person: $p")
     entityManagerHandler.withEntityManager("exampledb"){
       String persistenceUnitName, EntityManager entityManager ->
@@ -61,8 +61,8 @@ class PersonService extends AbstractGriffonService {
 
     p    
   }
-  Person removePerson(p) {
-    log.info("save person: $p")
+  void removePerson(Person p) {
+    log.info("removePerson person: $p")
     entityManagerHandler.withEntityManager("exampledb"){
       String persistenceUnitName, EntityManager entityManager ->
       EntityTransaction tx=entityManager.getTransaction()

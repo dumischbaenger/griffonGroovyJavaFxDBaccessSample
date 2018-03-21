@@ -47,6 +47,17 @@ class PersonDetailController extends AbstractGriffonController {
 
   @ControllerAction
   @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
+  void remove() {
+    log.info("PersonDetailController remove")
+
+//    showPerson(new Person())
+    personService.removePerson(model.person)
+    
+    application.eventRouter.publishEvent('personRemoved', [model.person])
+  }
+
+  @ControllerAction
+  @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
   void save() {
     log.info("PersonDetailController save")
 

@@ -26,6 +26,7 @@
         <buttons>
             <Button fx:id="personSave" mnemonicParsing="false" text="Save" JavaFXUtils.griffonActionId="save" JavaFXUtils.i18nDefaultValue="Save" JavaFXUtils.i18nKey="personDetails.button.save" />
             <Button fx:id="personNew" mnemonicParsing="false" text="New" JavaFXUtils.griffonActionId="createNew" JavaFXUtils.i18nDefaultValue="New" JavaFXUtils.i18nKey="personDetails.button.new" />
+            <Button fx:id="personRemove" mnemonicParsing="false" text="Remove" JavaFXUtils.griffonActionId="remove" JavaFXUtils.i18nDefaultValue="Remove" JavaFXUtils.i18nKey="personDetails.button.remove" />
         </buttons>
       </ButtonBar>
    </children>
