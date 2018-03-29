@@ -44,7 +44,9 @@ class PersonListController extends AbstractGriffonController{
     }
     void showAdditionalPersons(Person person) {
       log.info("PersonListController showAdditionalPersons")
-      model.personsObervable.add(person)
+      if(model.personsObervable!=null) {
+        model.personsObervable.add(person)
+      }
     }
     void showPersonsDetails(Person person) {
       log.info("PersonListController showPersonsDetails")
