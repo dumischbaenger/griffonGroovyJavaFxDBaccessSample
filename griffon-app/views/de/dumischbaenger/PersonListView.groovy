@@ -95,6 +95,18 @@ class PersonListView extends AbstractJavaFXGriffonView {
       Person p=personObserver.value
       p.ageProperty
     }
+    columnAge.setCellFactory(
+      TextFieldTableCell.forTableColumn(
+        new StringConverter<Integer>() {
+          public String toString(Integer i) {
+            return Integer.toString(i)
+          }
+          public Integer fromString(String intAsString) {
+            return Integer.parseInt(intAsString)
+          }
+        }
+      )
+    )
 
     // Listen for selection changes and show the person details when changed.
     table.getSelectionModel().selectedItemProperty().addListener({ observable, oldValue, newValue ->
