@@ -4,11 +4,11 @@ import javax.annotation.Nonnull
 
 import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView
 
+import de.dumischbaenger.domainmodel.Gender
 import de.dumischbaenger.domainmodel.Person
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
-import javafx.beans.property.IntegerProperty
 import javafx.beans.value.ChangeListener
 import javafx.event.EventHandler
 import javafx.fxml.FXML
@@ -42,6 +42,8 @@ class PersonListView extends AbstractJavaFXGriffonView {
   TableColumn columnName
   @FXML
   TableColumn columnAge
+  @FXML
+  TableColumn columnGender
 
   void initUI() {
     log.info("PersonDetailView initUI")
@@ -103,6 +105,34 @@ class PersonListView extends AbstractJavaFXGriffonView {
           }
           public Integer fromString(String intAsString) {
             return Integer.parseInt(intAsString)
+          }
+        }
+      )
+    )
+
+    columnGender.setCellValueFactory{ personObserver ->
+      Person p=personObserver.value
+      p.genderProperty
+    }
+    columnGender.setCellFactory(
+      TextFieldTableCell.forTableColumn(
+        new StringConverter<Gender>() {
+          public String toString(Gender g) {
+            String result="";
+            if(g!=null) {
+              result=(g.id==1) ? "mail" : "femail"
+            }
+            return result
+          }
+          public Gender fromString(String genderAsStrinig) {
+            Gender result=Gender.genders[1]
+            switch(genderAsStrinig) {
+              case "1": case "male":
+              result=Gender.genders[1]
+              case "2": case "female":
+              result=Gender.genders[2]
+            }
+            return result
           }
         }
       )

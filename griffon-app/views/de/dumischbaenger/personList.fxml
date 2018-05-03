@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import griffon.javafx.support.*?>
+
 <!--
 <?import griffon.javafx.support.*?>
 -->
@@ -21,16 +23,8 @@
               <columns>
                 <TableColumn fx:id="columnId" prefWidth="75.0" text="Id" JavaFXUtils.i18nDefaultValue="Id" JavaFXUtils.i18nKey="personList.column.id" />
                 <TableColumn fx:id="columnName" prefWidth="75.0" text="Name" JavaFXUtils.i18nDefaultValue="Id" JavaFXUtils.i18nKey="personList.column.name" />
-                  <TableColumn fx:id="columnAge" prefWidth="75.0" text="Age" JavaFXUtils.i18nDefaultValue="Age" JavaFXUtils.i18nKey="personList.column.age" />
-                  <TableColumn fx:id="columnGender" prefWidth="75.0" text="Gender">
-                      <cellValueFactory>
-        <PropertyValueFactory property="gender" />
-    </cellValueFactory>
-        <cellFactory>
-        <TextFieldTableCell fx:factory="forTableColumn" />
-    </cellFactory>
-    
-                  </TableColumn>
+                <TableColumn fx:id="columnAge" prefWidth="75.0" text="Age" JavaFXUtils.i18nDefaultValue="Age" JavaFXUtils.i18nKey="personList.column.age" />
+                <TableColumn fx:id="columnGender" prefWidth="75.0" text="Gender" JavaFXUtils.i18nDefaultValue="Gender" JavaFXUtils.i18nKey="personList.column.gender"/>
               </columns>
             </TableView>
          </content>
