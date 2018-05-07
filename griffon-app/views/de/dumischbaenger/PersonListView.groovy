@@ -10,11 +10,15 @@ import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
 import javafx.beans.value.ChangeListener
+import javafx.collections.FXCollections
+import javafx.collections.ObservableList
 import javafx.event.EventHandler
 import javafx.fxml.FXML
+import javafx.scene.control.ComboBox
 import javafx.scene.control.TableColumn
 import javafx.scene.control.TableView
 import javafx.scene.control.TableColumn.CellEditEvent
+import javafx.scene.control.cell.ComboBoxTableCell
 import javafx.scene.control.cell.TextFieldTableCell
 import javafx.scene.layout.AnchorPane
 import javafx.util.StringConverter
@@ -44,6 +48,8 @@ class PersonListView extends AbstractJavaFXGriffonView {
   TableColumn columnAge
   @FXML
   TableColumn columnGender
+  @FXML
+  TableColumn columnGenderCombo
 
   void initUI() {
     log.info("PersonDetailView initUI")
@@ -110,6 +116,9 @@ class PersonListView extends AbstractJavaFXGriffonView {
       )
     )
 
+    String maleText=getApplication().getMessageSource().getMessage('gender.male')
+    String femaleText=getApplication().getMessageSource().getMessage('gender.female')
+    
     columnGender.setCellValueFactory{ personObserver ->
       Person p=personObserver.value
       p.genderProperty
@@ -120,22 +129,56 @@ class PersonListView extends AbstractJavaFXGriffonView {
           public String toString(Gender g) {
             String result="";
             if(g!=null) {
-              result=(g.id==1) ? "mail" : "femail"
+              result=(g.id==1) ? maleText : femaleText
             }
             return result
           }
           public Gender fromString(String genderAsStrinig) {
             Gender result=Gender.genders[1]
             switch(genderAsStrinig) {
-              case "1": case "male":
+              case "1": case maleText:
               result=Gender.genders[1]
-              case "2": case "female":
+              break
+              case "2": case femaleText:
               result=Gender.genders[2]
+              break
             }
             return result
           }
         }
       )
+    )
+
+    ObservableList<Gender> genders = FXCollections.observableArrayList(
+      Gender.genders.values().toArray()
+    );
+
+    columnGenderCombo.setCellValueFactory{ personObserver ->
+      Person p=personObserver.value
+      p.genderProperty
+    }
+    columnGenderCombo.setCellFactory(
+      ComboBoxTableCell.forTableColumn(
+        new StringConverter<Gender>() {
+          public String toString(Gender g) {
+            String result="";
+            if(g!=null) {
+              result=(g.id==1) ? maleText : femaleText
+            }
+            return result
+          }
+          public Gender fromString(String genderAsStrinig) {
+            Gender result=Gender.genders[1]
+            switch(genderAsStrinig) {
+              case maleText:
+              result=Gender.genders[1]
+              case femaleText:
+              result=Gender.genders[2]
+            }
+            return result
+          }
+        },
+      genders)
     )
 
     // Listen for selection changes and show the person details when changed.

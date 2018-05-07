@@ -1,21 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import griffon.javafx.support.*?>
 
 <!--
 <?import griffon.javafx.support.*?>
 -->
 
-<?import griffon.javafx.support.*?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.cell.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.control.cell.TextFieldTableCell?>
-
-<AnchorPane fx:id="rootAnchor" maxHeight="1.7976931348623157E308" prefHeight="216.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.PersonListView">
+<AnchorPane fx:id="rootAnchor" maxHeight="1.7976931348623157E308" prefHeight="216.0" prefWidth="483.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.PersonListView">
    <children>
       <ScrollPane fitToHeight="true" fitToWidth="true" layoutX="20.0" layoutY="24.0" prefHeight="201.0" prefWidth="379.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
@@ -24,7 +19,8 @@
                 <TableColumn fx:id="columnId" prefWidth="75.0" text="Id" JavaFXUtils.i18nDefaultValue="Id" JavaFXUtils.i18nKey="personList.column.id" />
                 <TableColumn fx:id="columnName" prefWidth="75.0" text="Name" JavaFXUtils.i18nDefaultValue="Id" JavaFXUtils.i18nKey="personList.column.name" />
                 <TableColumn fx:id="columnAge" prefWidth="75.0" text="Age" JavaFXUtils.i18nDefaultValue="Age" JavaFXUtils.i18nKey="personList.column.age" />
-                <TableColumn fx:id="columnGender" prefWidth="75.0" text="Gender" JavaFXUtils.i18nDefaultValue="Gender" JavaFXUtils.i18nKey="personList.column.gender"/>
+                <TableColumn fx:id="columnGender" prefWidth="99.0" text="Gender" JavaFXUtils.i18nDefaultValue="Gender" JavaFXUtils.i18nKey="personList.column.gender" />
+                <TableColumn fx:id="columnGenderCombo" prefWidth="136.0" text="GenderCombo" JavaFXUtils.i18nDefaultValue="GenderCombo" JavaFXUtils.i18nKey="personList.column.gendercombo" />
               </columns>
             </TableView>
          </content>
