@@ -38,6 +38,7 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
   void initUI() {
     log.info("GriffonGroovyJavaFxDBaccessSampleView initUI")
     
+    
     Stage stage = (Stage) getApplication()
         .createApplicationContainer(Collections.<String, Object>emptyMap());
     stage.setTitle(getApplication().getMessageSource()
@@ -52,5 +53,9 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
     getApplication().getWindowManager().attach("mainWindow", stage);
     connectActions(node, controller);
     connectMessageSource(node);
+
+    withMVC('login') { m, v, c ->
+      c.show()
+    }
   }
 }

@@ -25,4 +25,9 @@ mvcGroups {
         view       = 'de.dumischbaenger.PersonListView'
         controller = 'de.dumischbaenger.PersonListController'
     }
+    'login' {
+        model      = 'de.dumischbaenger.LoginModel'
+        view       = 'de.dumischbaenger.LoginView'
+        controller = 'de.dumischbaenger.LoginController'
+    }
 }
