@@ -23,6 +23,25 @@ apply plugin: 'org.codehaus.griffon.griffon'
 apply plugin: 'net.nemerosa.versioning'
 apply plugin: 'eclipse'
 
+//BD add fxml resources
+sourceSets {
+  main {
+    //output.resourcesDir = 'build/classes/main'
+    //output.classesDir = 'build/classes/main'
+//    output.resourcesDir=output.classesDir
+    java {
+      srcDirs += []
+    }
+    groovy {
+      srcDirs += []
+    }
+    resources {
+      srcDirs += ["griffon-app/views"]
+    }
+  }
+}
+
+
 Date buildTimeAndDate = new Date()
 ext {
   buildDate = new SimpleDateFormat('yyyy-MM-dd').format(buildTimeAndDate)
@@ -95,6 +114,19 @@ dependencies {
   }
 
   functionalTestCompile "org.codehaus.griffon:griffon-javafx-test:${griffon.version}"
+}
+
+//BD extend run task
+run {
+//  classpath sourceSets.main.runtimeClasspath 
+//  classpath+=sourceSets.main.resources
+  
+//  main = "com.bla.MainRunner"
+  //args "arg1", "arg2"
+  
+//  doFirst{
+//    sourceSets.main.resources.each { println it}
+//  }
 }
 
 task sourceJar(type: Jar) {
