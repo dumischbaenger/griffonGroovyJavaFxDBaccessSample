@@ -7,7 +7,6 @@ import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
-import groovy.swing.factory.VGlueFactory
 import javafx.fxml.FXML
 import javafx.scene.Scene
 import javafx.scene.control.TextField
@@ -25,6 +24,8 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
   VBox vbox
   @FXML
   TextField countText
+  
+  Stage mainWindow
 
   @Override
   public void mvcGroupInit(@Nonnull Map<String, Object> args) {
@@ -35,27 +36,24 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
     createMVCGroup("personDetail");
   }
 
+  
   void initUI() {
     log.info("GriffonGroovyJavaFxDBaccessSampleView initUI")
     
     
-    Stage stage = (Stage) getApplication()
+    mainWindow = (Stage) getApplication()
         .createApplicationContainer(Collections.<String, Object>emptyMap());
-    stage.setTitle(getApplication().getMessageSource()
+    mainWindow.setTitle(getApplication().getMessageSource()
         .getMessage('application.title', "GriffonGroovyJavaFxDBaccessSample"))
-    stage.setWidth(600);
-    stage.setHeight(400);
+    mainWindow.setWidth(600);
+    mainWindow.setHeight(400);
 
     VBox node = loadFromFXML()
     Scene scene = new Scene(node);
 
-    stage.setScene(scene);
-    getApplication().getWindowManager().attach("mainWindow", stage);
+    mainWindow.setScene(scene);
+    getApplication().getWindowManager().attach("mainWindow", mainWindow);
     connectActions(node, controller);
     connectMessageSource(node);
-
-    withMVC('login') { m, v, c ->
-      c.show()
-    }
   }
 }

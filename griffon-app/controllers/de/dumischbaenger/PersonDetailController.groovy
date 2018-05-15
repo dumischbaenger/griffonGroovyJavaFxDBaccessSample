@@ -10,7 +10,6 @@ import griffon.core.artifact.GriffonController
 import griffon.core.controller.ControllerAction
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
-import griffon.transform.Threading
 
 @ArtifactProviderFor(GriffonController)
 class PersonDetailController extends AbstractGriffonController {
@@ -35,7 +34,6 @@ class PersonDetailController extends AbstractGriffonController {
   }
 
   @ControllerAction
-  @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
   void createNew() {
     log.info("PersonDetailController createNew")
 
@@ -46,7 +44,6 @@ class PersonDetailController extends AbstractGriffonController {
   }
 
   @ControllerAction
-  @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
   void remove() {
     log.info("PersonDetailController remove")
 
@@ -57,14 +54,12 @@ class PersonDetailController extends AbstractGriffonController {
   }
 
   @ControllerAction
-  @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
   void save() {
     log.info("PersonDetailController save")
 
     personService.savePerson(model.person)
   }
 
-  @Threading(Threading.Policy.INSIDE_UITHREAD_ASYNC)
   void showPerson(Person p) {
     log.info("PersonDetailController showPerson")
     view.showPerson(p)
