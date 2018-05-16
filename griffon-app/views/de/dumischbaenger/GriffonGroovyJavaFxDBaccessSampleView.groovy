@@ -22,8 +22,6 @@ class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
 
   @FXML
   VBox vbox
-  @FXML
-  TextField countText
   
   Stage mainWindow
 

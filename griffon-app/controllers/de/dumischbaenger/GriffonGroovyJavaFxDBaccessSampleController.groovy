@@ -24,9 +24,6 @@ class GriffonGroovyJavaFxDBaccessSampleController extends AbstractGriffonControl
     println application.windowManager.getWindowNames()
 
     application.windowManager.show('mainWindow')
-    
-//    System.sleep(5000)
-    
     application.windowManager.show('login')
   }
 

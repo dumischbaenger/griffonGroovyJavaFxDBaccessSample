@@ -3,6 +3,9 @@ application {
     startupGroups = ['griffonGroovyJavaFxDBaccessSample']
     autoShutdown = true
 }
+windowManager {
+  startingWindow = 'nothing' //no automatism here
+}
 mvcGroups {
     // MVC Group for "griffonGroovyJavaFxDBaccessSample"
     'griffonGroovyJavaFxDBaccessSample' {
