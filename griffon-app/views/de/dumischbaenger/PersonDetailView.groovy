@@ -28,7 +28,7 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
 
 
   @MVCMember
-  GriffonGroovyJavaFxDBaccessSampleView parentView
+  MainView parentView
 
   @FXML
   AnchorPane personDetail

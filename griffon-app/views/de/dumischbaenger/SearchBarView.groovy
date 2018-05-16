@@ -18,7 +18,7 @@ class SearchBarView extends AbstractJavaFXGriffonView {
     SearchBarModel model
     
     @MVCMember
-    GriffonGroovyJavaFxDBaccessSampleView parentView
+    MainView parentView
     
     @FXML
     HBox searchbar

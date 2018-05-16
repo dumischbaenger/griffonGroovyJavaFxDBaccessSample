@@ -7,6 +7,6 @@ import griffon.transform.FXObservable
 import griffon.metadata.ArtifactProviderFor
 
 @ArtifactProviderFor(GriffonModel)
-class GriffonGroovyJavaFxDBaccessSampleModel extends AbstractGriffonModel {
+class MainModel extends AbstractGriffonModel {
     @FXObservable String clickCount = "0"
 }

@@ -33,7 +33,7 @@ class PersonListView extends AbstractJavaFXGriffonView {
   PersonListModel model
 
   @MVCMember
-  GriffonGroovyJavaFxDBaccessSampleView parentView
+  MainView parentView
 
   @FXML
   AnchorPane rootAnchor

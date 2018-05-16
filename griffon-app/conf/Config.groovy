@@ -1,17 +1,17 @@
 application {
     title = 'griffon-groovy-java-fx-dbaccess-sample'
-    startupGroups = ['griffonGroovyJavaFxDBaccessSample']
+    startupGroups = ['mainWindow']
     autoShutdown = true
 }
 windowManager {
-  startingWindow = 'nothing' //no automatism here
+  startingWindow = 'nothing' //no automatism here; Attention: empty string leads to griffon exception
 }
 mvcGroups {
     // MVC Group for "griffonGroovyJavaFxDBaccessSample"
-    'griffonGroovyJavaFxDBaccessSample' {
-        model      = 'de.dumischbaenger.GriffonGroovyJavaFxDBaccessSampleModel'
-        view       = 'de.dumischbaenger.GriffonGroovyJavaFxDBaccessSampleView'
-        controller = 'de.dumischbaenger.GriffonGroovyJavaFxDBaccessSampleController'
+    'mainWindow' {
+        model      = 'de.dumischbaenger.MainModel'
+        view       = 'de.dumischbaenger.MainView'
+        controller = 'de.dumischbaenger.MainController'
     }
     'searchBar' {
         model      = 'de.dumischbaenger.SearchBarModel'

@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 import static org.awaitility.Awaitility.await
 
-@TestFor(GriffonGroovyJavaFxDBaccessSampleController)
+@TestFor(MainController)
 class GriffonGroovyJavaFxDBaccessSampleControllerTest {
     static {
         System.setProperty('org.slf4j.simpleLogger.defaultLogLevel', 'trace')
@@ -21,7 +21,7 @@ class GriffonGroovyJavaFxDBaccessSampleControllerTest {
     @Inject
     private ArtifactManager artifactManager
 
-    private GriffonGroovyJavaFxDBaccessSampleController controller
+    private MainController controller
 
     @Rule
     public final GriffonUnitRule griffon = new GriffonUnitRule()
@@ -29,7 +29,7 @@ class GriffonGroovyJavaFxDBaccessSampleControllerTest {
     @Test
     void executeClickAction() {
         // given:
-        controller.model = artifactManager.newInstance(GriffonGroovyJavaFxDBaccessSampleModel)
+        controller.model = artifactManager.newInstance(MainModel)
 
         // when:
         controller.invokeAction('click')

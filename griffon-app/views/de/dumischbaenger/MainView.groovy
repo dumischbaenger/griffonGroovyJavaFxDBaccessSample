@@ -14,11 +14,11 @@ import javafx.scene.layout.VBox
 import javafx.stage.Stage
 
 @ArtifactProviderFor(GriffonView)
-class GriffonGroovyJavaFxDBaccessSampleView extends AbstractJavaFXGriffonView {
+class MainView extends AbstractJavaFXGriffonView {
   @MVCMember @Nonnull
-  GriffonGroovyJavaFxDBaccessSampleController controller
+  MainController controller
   @MVCMember @Nonnull
-  GriffonGroovyJavaFxDBaccessSampleModel model
+  MainModel model
 
   @FXML
   VBox vbox

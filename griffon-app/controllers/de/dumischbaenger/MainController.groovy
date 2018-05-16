@@ -1,26 +1,29 @@
 package de.dumischbaenger
 
-import java.util.Map
-
 import javax.annotation.Nonnull
 
 import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonController
 
+import griffon.core.GriffonApplication
 import griffon.core.artifact.GriffonController
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
 
 @ArtifactProviderFor(GriffonController)
-class GriffonGroovyJavaFxDBaccessSampleController extends AbstractGriffonController{
+class MainController extends AbstractGriffonController{
   @MVCMember @Nonnull
-  GriffonGroovyJavaFxDBaccessSampleModel model
+  MainModel model
   
   @Override
   public void mvcGroupInit(@Nonnull Map<String, Object> args) {
-    log.info("GriffonGroovyJavaFxDBaccessSampleController mvcGroupInit")
-//    application.windowManager.show('loginWindow')
+    log.info("MainController mvcGroupInit")
     createMVC("login")
     
+  }
+  
+  void onReadyStart(GriffonApplication application) {
+    log.info("MainController onReadyStart")
+
     println application.windowManager.getWindowNames()
 
     application.windowManager.show('mainWindow')

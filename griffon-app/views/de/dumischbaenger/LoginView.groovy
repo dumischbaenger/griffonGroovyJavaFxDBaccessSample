@@ -20,7 +20,7 @@ class LoginView extends AbstractJavaFXGriffonView {
   LoginModel model
 
   @MVCMember
-  GriffonGroovyJavaFxDBaccessSampleView parentView
+  MainView parentView
 
 
   void initUI() {
