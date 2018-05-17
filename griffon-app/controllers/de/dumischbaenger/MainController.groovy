@@ -24,9 +24,9 @@ class MainController extends AbstractGriffonController{
   void onReadyStart(GriffonApplication application) {
     log.info("MainController onReadyStart")
 
-    println application.windowManager.getWindowNames()
+//    println application.windowManager.getWindowNames()
 
-    application.windowManager.show('mainWindow')
+    application.windowManager.show('mainFrame')
     application.windowManager.show('login')
   }
 

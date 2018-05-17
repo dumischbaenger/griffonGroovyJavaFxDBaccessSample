@@ -50,7 +50,7 @@ class MainView extends AbstractJavaFXGriffonView {
     Scene scene = new Scene(node);
 
     mainWindow.setScene(scene);
-    getApplication().getWindowManager().attach("mainWindow", mainWindow);
+    getApplication().getWindowManager().attach(mvcGroup.mvcId, mainWindow);
     connectActions(node, controller);
     connectMessageSource(node);
   }

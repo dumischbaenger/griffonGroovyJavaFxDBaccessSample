@@ -7,6 +7,9 @@ import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
+import javafx.scene.Scene
+import javafx.scene.layout.GridPane
+import javafx.scene.layout.VBox
 import javafx.stage.Modality
 import javafx.stage.Stage
 
@@ -23,7 +26,7 @@ class LoginView extends AbstractJavaFXGriffonView {
   MainView parentView
 
 
-  void initUI() {
+  void initUIxxx() {
     log.info("LoginView initUI")
 
     Stage window=builder.application(title: application.configuration['application.title'],
@@ -44,4 +47,25 @@ class LoginView extends AbstractJavaFXGriffonView {
     window.initOwner(mainWindow)
   }
 
+  void initUI() {
+    Stage loginWindow = (Stage) getApplication()
+        .createApplicationContainer(Collections.<String, Object>emptyMap());
+    loginWindow.setTitle(getApplication().getMessageSource()
+        .getMessage('login.title', "Login"))
+//    loginWindow.setWidth(00);
+//    loginWindow.setHeight(400);
+
+    GridPane node = loadFromFXML()
+    Scene scene = new Scene(node);
+
+    loginWindow.setScene(scene);
+    getApplication().getWindowManager().attach(mvcGroup.mvcId, loginWindow);
+    loginWindow.initModality(Modality.APPLICATION_MODAL)
+    Stage mainWindow=application.windowManager.findWindow('mainFrame')
+    loginWindow.initOwner(mainWindow)
+
+    
+    connectActions(node, controller);
+    connectMessageSource(node);
+  }
 }

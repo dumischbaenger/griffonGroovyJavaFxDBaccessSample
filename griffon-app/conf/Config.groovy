@@ -1,6 +1,6 @@
 application {
     title = 'griffon-groovy-java-fx-dbaccess-sample'
-    startupGroups = ['mainWindow']
+    startupGroups = ['mainFrame']
     autoShutdown = true
 }
 windowManager {
@@ -8,7 +8,7 @@ windowManager {
 }
 mvcGroups {
     // MVC Group for "griffonGroovyJavaFxDBaccessSample"
-    'mainWindow' {
+    'mainFrame' {
         model      = 'de.dumischbaenger.MainModel'
         view       = 'de.dumischbaenger.MainView'
         controller = 'de.dumischbaenger.MainController'
