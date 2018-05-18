@@ -24,31 +24,11 @@ class LoginView extends AbstractJavaFXGriffonView {
 
   @MVCMember
   MainView parentView
-
-
-  void initUIxxx() {
-    log.info("LoginView initUI")
-
-    Stage window=builder.application(title: application.configuration['application.title'],
-    sizeToScene: true, centerOnScreen: true, name: 'login') {
-      scene(fill: WHITE, width: 200, height: 60) {
-        g = gridPane {
-          label(id: 'clickLabel', row: 0, column: 0,
-          text: bind(model.clickCountProperty()))
-          button(row: 1, column: 0, prefWidth: 200,
-          griffonActionId: 'click')
-        }
-        connectActions(g, controller)
-        connectMessageSource(g)
-      }
-    }
-    window.initModality(Modality.APPLICATION_MODAL)
-    Stage mainWindow=application.windowManager.findWindow('mainWindow')
-    window.initOwner(mainWindow)
-  }
+  
+  Stage loginWindow;
 
   void initUI() {
-    Stage loginWindow = (Stage) getApplication()
+    loginWindow = (Stage) getApplication()
         .createApplicationContainer(Collections.<String, Object>emptyMap());
     loginWindow.setTitle(getApplication().getMessageSource()
         .getMessage('login.title', "Login"))
@@ -67,5 +47,9 @@ class LoginView extends AbstractJavaFXGriffonView {
     
     connectActions(node, controller);
     connectMessageSource(node);
+  }
+  
+  void show() {
+    application.windowManager.show("login")
   }
 }

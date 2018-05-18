@@ -24,7 +24,7 @@ class LoginController extends AbstractGriffonController {
         model.clickCount = String.valueOf(count + 1)
     }
     
-    void show() {
+    void startLogin() {
       view.show()
     }
 }

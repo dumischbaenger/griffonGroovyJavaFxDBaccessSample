@@ -27,7 +27,8 @@ class MainController extends AbstractGriffonController{
 //    println application.windowManager.getWindowNames()
 
     application.windowManager.show('mainFrame')
-    application.windowManager.show('login')
+    LoginController c=application.mvcGroupManager.findController("login", LoginController)
+    c.startLogin()
   }
 
 }
