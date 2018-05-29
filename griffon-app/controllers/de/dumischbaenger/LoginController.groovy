@@ -8,6 +8,8 @@ import griffon.core.artifact.GriffonController
 import griffon.core.controller.ControllerAction
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
+import javafx.fxml.FXML
+import javafx.scene.control.TextField
 
 @ArtifactProviderFor(GriffonController)
 class LoginController extends AbstractGriffonController {
@@ -16,15 +18,16 @@ class LoginController extends AbstractGriffonController {
     
     @MVCMember @Nonnull
     LoginView view
-  
 
-    @ControllerAction
-    void click() {
-        int count = model.clickCount.toInteger()
-        model.clickCount = String.valueOf(count + 1)
-    }
-    
+    @javax.inject.Inject
+    DbLoginService dbLoginService;
+  
     void startLogin() {
       view.show()
+    }
+    
+    @ControllerAction
+    void login() {
+      dbLoginService.login(model.user, model.pwd)
     }
 }

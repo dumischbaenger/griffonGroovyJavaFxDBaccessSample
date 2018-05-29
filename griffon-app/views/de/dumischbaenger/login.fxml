@@ -8,8 +8,13 @@
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import griffon.javafx.support.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="111.0" prefWidth="233.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1">
+<!--
+<?import griffon.javafx.support.*?>
+-->
+
+<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="111.0" prefWidth="233.0" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.LoginController">
   <columnConstraints>
     <ColumnConstraints halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="60.0" />
     <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -30,14 +35,14 @@
             <Insets right="5.0" />
          </GridPane.margin>
       </Label>
-      <TextField GridPane.columnIndex="1" />
-      <PasswordField GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Button defaultButton="true" mnemonicParsing="false" text="Ok" GridPane.rowIndex="2">
+      <TextField fx:id="user" GridPane.columnIndex="1" />
+      <PasswordField fx:id="pwd" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Button defaultButton="true" mnemonicParsing="false" text="Ok" GridPane.rowIndex="2" JavaFXUtils.griffonActionId="login" JavaFXUtils.i18nDefaultValue="Login" JavaFXUtils.i18nKey="login.loginButton">
          <GridPane.margin>
             <Insets right="5.0" />
          </GridPane.margin>
       </Button>
-      <Button cancelButton="true" mnemonicParsing="false" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="2">
+      <Button cancelButton="true" mnemonicParsing="false" text="Cancel" GridPane.columnIndex="1" GridPane.rowIndex="2" JavaFXUtils.griffonActionId="cancel" JavaFXUtils.i18nDefaultValue="Cancel" JavaFXUtils.i18nKey="login.cancelButton">
          <GridPane.margin>
             <Insets left="5.0" />
          </GridPane.margin>

@@ -7,9 +7,11 @@ import org.codehaus.griffon.runtime.javafx.artifact.AbstractJavaFXGriffonView
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
+import javafx.beans.binding.Bindings
+import javafx.fxml.FXML
 import javafx.scene.Scene
+import javafx.scene.control.TextField
 import javafx.scene.layout.GridPane
-import javafx.scene.layout.VBox
 import javafx.stage.Modality
 import javafx.stage.Stage
 
@@ -26,7 +28,12 @@ class LoginView extends AbstractJavaFXGriffonView {
   MainView parentView
   
   Stage loginWindow;
-
+  
+  @FXML
+  TextField user
+  @FXML
+  TextField pwd
+  
   void initUI() {
     loginWindow = (Stage) getApplication()
         .createApplicationContainer(Collections.<String, Object>emptyMap());
@@ -47,6 +54,10 @@ class LoginView extends AbstractJavaFXGriffonView {
     
     connectActions(node, controller);
     connectMessageSource(node);
+    
+    Bindings.bindBidirectional(user.textProperty(), model.userProperty)
+    Bindings.bindBidirectional(pwd.textProperty(), model.pwdProperty)
+    
   }
   
   void show() {

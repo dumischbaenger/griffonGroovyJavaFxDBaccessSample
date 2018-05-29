@@ -8,5 +8,9 @@ import griffon.metadata.ArtifactProviderFor
 
 @ArtifactProviderFor(GriffonModel)
 class LoginModel extends AbstractGriffonModel {
-    @FXObservable String clickCount = "0"
+    
+    @FXObservable
+    String user
+    @FXObservable
+    String pwd
 }
