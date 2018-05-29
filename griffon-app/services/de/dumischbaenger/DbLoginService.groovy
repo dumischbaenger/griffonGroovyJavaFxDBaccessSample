@@ -19,6 +19,16 @@ class DbLoginService extends AbstractGriffonService {
   
   boolean login(String user, String pwd) {
     log.info("DbLoginService login: User $user")
+    
+    //BD attention: I put username and password into the system properties 
+    //BD to access it later in ApplicationEventHandler.onJpaConnectStart() method
+    if(user) {
+      System.properties.put("griffonGroovyJavaFxDBaccessSample.user",user)
+    }
+    if(pwd) {
+      System.properties.put("griffonGroovyJavaFxDBaccessSample.password",pwd)
+    }
+
     List persons=[]
     entityManagerHandler.withEntityManager("exampledb"){ 
       String persistenceUnitName, EntityManager entityManager ->

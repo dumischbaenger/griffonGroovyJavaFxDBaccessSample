@@ -24,8 +24,6 @@ class MainController extends AbstractGriffonController{
   void onReadyStart(GriffonApplication application) {
     log.info("MainController onReadyStart")
 
-//    println application.windowManager.getWindowNames()
-
     application.windowManager.show('mainFrame')
     LoginController c=application.mvcGroupManager.findController("login", LoginController)
     c.startLogin()
