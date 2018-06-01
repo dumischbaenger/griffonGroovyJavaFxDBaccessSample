@@ -10,10 +10,13 @@ import griffon.metadata.ArtifactProviderFor
 import javafx.beans.binding.Bindings
 import javafx.fxml.FXML
 import javafx.scene.Scene
+import javafx.scene.control.ComboBox
 import javafx.scene.control.TextField
 import javafx.scene.layout.GridPane
 import javafx.stage.Modality
 import javafx.stage.Stage
+import javafx.stage.StageStyle
+import javafx.stage.WindowEvent
 
 @ArtifactProviderFor(GriffonView)
 class LoginView extends AbstractJavaFXGriffonView {
@@ -27,20 +30,27 @@ class LoginView extends AbstractJavaFXGriffonView {
   @MVCMember
   MainView parentView
   
-  Stage loginWindow;
-  
+  @FXML
+  ComboBox database
   @FXML
   TextField user
   @FXML
   TextField pwd
   
   void initUI() {
-    loginWindow = (Stage) getApplication()
+    Stage loginWindow = (Stage) getApplication()
         .createApplicationContainer(Collections.<String, Object>emptyMap());
     loginWindow.setTitle(getApplication().getMessageSource()
         .getMessage('login.title', "Login"))
-//    loginWindow.setWidth(00);
-//    loginWindow.setHeight(400);
+    loginWindow.setWidth(300);
+    loginWindow.setHeight(150);
+//    loginWindow.initStyle(StageStyle.UNDECORATED);
+
+    //BD disable close button in login window decoration     
+    loginWindow.setOnCloseRequest{
+      WindowEvent e->
+      e.consume()
+    };
 
     GridPane node = loadFromFXML()
     Scene scene = new Scene(node);
