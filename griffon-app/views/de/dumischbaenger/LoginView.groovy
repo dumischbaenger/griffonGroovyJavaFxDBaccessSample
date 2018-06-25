@@ -18,6 +18,7 @@ import org.w3c.dom.NodeList
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
+import griffon.transform.FXObservable
 import javafx.beans.binding.Bindings
 import javafx.fxml.FXML
 import javafx.scene.Scene
@@ -46,6 +47,9 @@ class LoginView extends AbstractJavaFXGriffonView {
   TextField user
   @FXML
   TextField pwd
+  
+  @FXObservable
+  List persistenceUnits=[]
 
   void initUI() {
     Stage loginWindow = (Stage) getApplication()
@@ -70,7 +74,11 @@ class LoginView extends AbstractJavaFXGriffonView {
     Stage mainWindow=application.windowManager.findWindow('mainFrame')
     loginWindow.initOwner(mainWindow)
 
-    List persistenceUnits=persistenceUnits
+//    def xxx=getPersistenceUnitsProperty()
+    List pUnits=fetchPersistenceUnits()
+    persistenceUnits.addAll(pUnits)
+    
+    def props=persistenceUnitsProperty
 
 
     connectActions(node, controller);
@@ -78,10 +86,11 @@ class LoginView extends AbstractJavaFXGriffonView {
 
     Bindings.bindBidirectional(user.textProperty(), model.userProperty)
     Bindings.bindBidirectional(pwd.textProperty(), model.pwdProperty)
+    Bindings.bindBidirectional(database.itemsProperty(), props)
 
   }
 
-  private List getPersistenceUnits() {
+  private List fetchPersistenceUnits() {
 
     List pUnits=[]
 
