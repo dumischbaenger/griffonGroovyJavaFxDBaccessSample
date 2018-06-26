@@ -1,5 +1,7 @@
 package de.dumischbaenger
 
+import java.util.List
+
 import javax.annotation.Nonnull
 import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
@@ -19,6 +21,9 @@ import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
 import griffon.metadata.ArtifactProviderFor
 import griffon.transform.FXObservable
+import groovy.util.slurpersupport.GPathResult
+import groovy.util.slurpersupport.NodeChild
+import groovy.util.slurpersupport.NodeChildren
 import javafx.beans.binding.Bindings
 import javafx.fxml.FXML
 import javafx.scene.Scene
@@ -78,19 +83,18 @@ class LoginView extends AbstractJavaFXGriffonView {
     List pUnits=fetchPersistenceUnits()
     persistenceUnits.addAll(pUnits)
     
-    def props=persistenceUnitsProperty
-
-
     connectActions(node, controller);
     connectMessageSource(node);
 
     Bindings.bindBidirectional(user.textProperty(), model.userProperty)
     Bindings.bindBidirectional(pwd.textProperty(), model.pwdProperty)
-    Bindings.bindBidirectional(database.itemsProperty(), props)
-
+    Bindings.bindBidirectional(database.itemsProperty(), persistenceUnitsProperty)
+    if(!persistenceUnits.empty){
+      database.getSelectionModel().select(0)
+    }
   }
 
-  private List fetchPersistenceUnits() {
+  private List fetchPersistenceUnitsJavaStyle() {
 
     List pUnits=[]
 
@@ -148,5 +152,40 @@ class LoginView extends AbstractJavaFXGriffonView {
 
   void show() {
     application.windowManager.show("login")
+  }
+
+  private List fetchPersistenceUnits() {
+  
+    List pUnits=[]
+  
+    String filename="/META-INF/persistence.xml"
+    GPathResult persistence
+    try {
+      String text=getClass().getResource(filename).text
+      persistence=new XmlSlurper(false,false).parseText(text)
+    } catch (Exception e) {
+      log.error("$filename could not be parsed")
+      application.shutdown()
+    }
+  
+    //BD XPath - Expression aufsetzen
+    String filter="/persistence/persistence-unit";
+    def unitSearchResult=persistence."persistence-unit"
+    Integer xxx=unitSearchResult.size()
+//    Iterator res=unitSearchResult.iterator()
+//    while(res.hasNext()) {
+//      NodeChild item = res.next()
+//      println "bla: " + item.@xyzx
+//    }
+    def list = unitSearchResult.tol
+    persistence.'persistence-unit'.find{
+      node-> 
+      println "nodeName: " + node.name()
+    }
+    def names=persistence.'persistence-unit'.@name.find{
+      node-> 
+      println "nodeName: " + node.name() + " " + node.text()
+    }
+    res 
   }
 }
