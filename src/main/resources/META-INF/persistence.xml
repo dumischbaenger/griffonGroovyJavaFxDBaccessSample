@@ -2,13 +2,7 @@
 <persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
     version="2.0" xmlns="http://java.sun.com/xml/ns/persistence" >
-    <persistence-unit name="exampledb" transaction-type="RESOURCE_LOCAL" xyzx="123">
-
-<!--
-        <class>de.vogella.jpa.eclipselink.model.Person</class>
-        <class>de.vogella.jpa.eclipselink.model.Family</class>
-        <class>de.vogella.jpa.eclipselink.model.Job</class>
--->        
+    <persistence-unit name="exampledb" transaction-type="RESOURCE_LOCAL">
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
@@ -26,20 +20,15 @@
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
             -->
         </properties>
-
     </persistence-unit>
-    <persistence-unit name="unknown" transaction-type="RESOURCE_LOCAL" xyzx="123">
-
-<!--
-        <class>de.vogella.jpa.eclipselink.model.Person</class>
-        <class>de.vogella.jpa.eclipselink.model.Family</class>
-        <class>de.vogella.jpa.eclipselink.model.Job</class>
--->        
+    
+    
+    <persistence-unit name="unknown" transaction-type="RESOURCE_LOCAL">
 
         <properties>
             <property name="javax.persistence.jdbc.driver" value="org.apache.derby.jdbc.EmbeddedDriver" />
                 <property name="javax.persistence.jdbc.url"
-                value="jdbc:derby:griffonGroovyJavaFxDBaccessSample;create=true" />
+                value="jdbc:derby:griffonGroovyJavaFxDBaccessSample2;create=false" />
             <property name="javax.persistence.jdbc.userx" value="test" />
             <property name="javax.persistence.jdbc.passwordx" value="test" />
 
@@ -52,7 +41,6 @@
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create" />
             -->
         </properties>
-
     </persistence-unit>
 </persistence>
 

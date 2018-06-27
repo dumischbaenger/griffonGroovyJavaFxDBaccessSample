@@ -42,7 +42,7 @@ class LoginController extends AbstractGriffonController {
   void login() {
     log.info("LoginController login")
 
-    dbLoginService.login(model.user, model.pwd)
+    dbLoginService.login(model.user, model.pwd, model.persistenceUnit)
 
     //      application.mvcGroupManager.destroyMVCGroup(mvcGroup.mvcId)
     //      log.info("MVCGroup: $mvcGroup.mvcId")

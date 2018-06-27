@@ -8,5 +8,4 @@ import griffon.metadata.ArtifactProviderFor
 
 @ArtifactProviderFor(GriffonModel)
 class MainModel extends AbstractGriffonModel {
-    @FXObservable String clickCount = "0"
 }

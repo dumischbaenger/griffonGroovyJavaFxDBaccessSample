@@ -17,7 +17,7 @@ class DbLoginService extends AbstractGriffonService {
   @Inject
   private EntityManagerHandler entityManagerHandler
   
-  boolean login(String user, String pwd) {
+  boolean login(String user, String pwd, String persitenceUnit) {
     log.info("DbLoginService login: User $user")
     
     //BD attention: I put username and password into the system properties 
