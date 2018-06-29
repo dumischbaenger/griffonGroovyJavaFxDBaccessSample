@@ -28,9 +28,12 @@ class DbLoginService extends AbstractGriffonService {
     if(pwd) {
       System.properties.put("griffonGroovyJavaFxDBaccessSample.password",pwd)
     }
+    if(persitenceUnit) {
+      System.properties.put("griffonGroovyJavaFxDBaccessSample.persitenceUnit",persitenceUnit)
+    }
 
     List persons=[]
-    entityManagerHandler.withEntityManager("exampledb"){ 
+    entityManagerHandler.withEntityManager(persitenceUnit){ 
       String persistenceUnitName, EntityManager entityManager ->
       persons=entityManager.createQuery('select p from Person p where 1=2').getResultList().collect()
     }
