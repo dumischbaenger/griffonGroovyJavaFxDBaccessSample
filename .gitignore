@@ -5,3 +5,5 @@
 /griffonGroovyJavaFxDBaccessSample/
 /derby.log
 /.classpath
+/.factorypath
+/.project
