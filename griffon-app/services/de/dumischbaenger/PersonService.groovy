@@ -63,12 +63,15 @@ class PersonService extends AbstractGriffonService {
   }
   void removePerson(Person p) {
     log.info("removePerson person: $p")
-    entityManagerHandler.withEntityManager("exampledb"){
-      String persistenceUnitName, EntityManager entityManager ->
-      EntityTransaction tx=entityManager.getTransaction()
-      tx.begin()
-      entityManager.remove(p)
-      tx.commit()
+
+    if(p!=null) {
+      entityManagerHandler.withEntityManager("exampledb"){
+        String persistenceUnitName, EntityManager entityManager ->
+        EntityTransaction tx=entityManager.getTransaction()
+        tx.begin()
+        entityManager.remove(p)
+        tx.commit()
+      }
     }
   
     p    
