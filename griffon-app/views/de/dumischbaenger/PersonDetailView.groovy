@@ -8,6 +8,8 @@ import de.dumischbaenger.domainmodel.Gender
 import de.dumischbaenger.domainmodel.Person
 import griffon.core.artifact.GriffonView
 import griffon.inject.MVCMember
+import griffon.javafx.beans.binding.UIThreadAwareBindings
+import griffon.javafx.collections.GriffonFXCollections
 import griffon.metadata.ArtifactProviderFor
 import javafx.beans.binding.Bindings
 import javafx.collections.FXCollections
@@ -60,6 +62,8 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
     parentView.vbox.getChildren().add(personDetail)
     ObservableList<Gender> genders = FXCollections.observableArrayList();
     genders.addAll(Gender.genders.values());
+    //BD tried this to avoid "Not on FX application thread" error but didn't help
+//    ObservableList<Gender> gendersThreadAware = GriffonFXCollections.uiThreadAwareObservableList(genders)
 
 
     personGender.setItems(genders);
@@ -92,7 +96,12 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
       personId.textProperty().bind(p.idProperty.asString())
       Bindings.bindBidirectional(personName.textProperty(), p.nameProperty)
       Bindings.bindBidirectional(personAge.textProperty(), p.ageProperty, new NumberStringConverter())
-      Bindings.bindBidirectional(personGender.valueProperty(), p.genderProperty)
+      //BD this call must run inside UI thread to avoid "Not on FX application thread" error
+      runInsideUISync{
+        Bindings.bindBidirectional(personGender.valueProperty(), p.genderProperty)
+      }
+//      BD tried this to avoid "Not on FX application thread" error but didn't help
+//      UIThreadAwareBindings.uiThreadAwareBind(personGender.valueProperty(), p.genderProperty)
     }
   }
 }
