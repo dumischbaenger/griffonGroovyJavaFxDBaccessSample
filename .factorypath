@@ -1,6 +1,0 @@
-<factorypath>
-    <factorypathentry kind="EXTJAR" id="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-groovy-compile/2.12.0/94eff3a85e957812b8836d93694401046154c156/griffon-groovy-compile-2.12.0.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.codehaus.griffon/griffon-core-compile/2.12.0/4bcbedecff6121c04238e100623fb0d7d7e31489/griffon-core-compile-2.12.0.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.kordamp.jipsy/jipsy/0.4.1/5268d83613766c2681f50ea49a1f35ea8dade0bc/jipsy-0.4.1.jar" enabled="true" runInBatchMode="false"/>
-    <factorypathentry kind="EXTJAR" id="/home/bdonauba/.gradle/caches/modules-2/files-2.1/org.kordamp.gipsy/gipsy/0.4.1/73d94da80d92fbe801ccd4798356cd919e0b185f/gipsy-0.4.1.jar" enabled="true" runInBatchMode="false"/>
-</factorypath>
