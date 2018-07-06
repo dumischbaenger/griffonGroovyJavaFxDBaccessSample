@@ -20,7 +20,7 @@ class SearchBarController extends AbstractGriffonController {
     @ControllerAction
     void search() {
       log.info("SearchBarController search")
-      List persons=personService.searchPersons([:])
+      List persons=personService.searchPersons([name:model.nameFilter])
       application.eventRouter.publishEvent('personSearchFinished', [persons])
       
 //      //BD getPersonListController directly an and send it list of persons

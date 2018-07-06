@@ -5,6 +5,7 @@ import javax.persistence.EntityManager
 import javax.persistence.EntityTransaction
 
 import org.codehaus.griffon.runtime.core.artifact.AbstractGriffonService
+import org.codehaus.groovy.ast.stmt.SwitchStatement
 
 import de.dumischbaenger.domainmodel.Person
 import griffon.core.artifact.GriffonService
@@ -31,7 +32,21 @@ class PersonService extends AbstractGriffonService {
     List persons=[]
     entityManagerHandler.withEntityManager("exampledb"){ 
       String persistenceUnitName, EntityManager entityManager ->
-      persons=entityManager.createQuery('select p from Person p').getResultList().collect()
+      Map x=searchCriteria
+      String query="select p from Person p where 1=1 "
+      searchCriteria.each{
+        key, value ->
+        if(value) {
+          switch (value) {
+            case [String]:
+              query+= " $key like '${value}%'"
+              break
+            default:
+              query+=""
+          }
+        } 
+      }
+      persons=entityManager.createQuery(query).getResultList().collect()
     }
     
     log.info("personen: $persons")
