@@ -38,7 +38,7 @@ class PersonService extends AbstractGriffonService {
         key, value ->
         if(value) {
           switch (value) {
-            case [String]:
+            case [String, GString]:
               query+= " $key like '${value}%'"
               break
             default:
