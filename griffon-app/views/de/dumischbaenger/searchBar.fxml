@@ -4,16 +4,16 @@
 <?import griffon.javafx.support.*?>
 -->
 
-<?import griffon.javafx.support.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
+<?import griffon.javafx.support.*?>
 
 <HBox fx:id="searchbar" prefHeight="27.0" prefWidth="264.0" style=" -fx-border-color: black; -fx-border-width: 0 0 1 0;" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="de.dumischbaenger.SearchBarView">
    <children>
       <TextField fx:id="searchName" />
-    <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="25.0" text="Search" JavaFXUtils.griffonActionId="search" JavaFXUtils.i18nDefaultValue="Search" JavaFXUtils.i18nKey="search.button">
+    <Button fx:id="searchButton" defaultButton="true" mnemonicParsing="false" prefHeight="25.0" text="Search" JavaFXUtils.griffonActionId="search" JavaFXUtils.i18nDefaultValue="Search" JavaFXUtils.i18nKey="search.button">
          <HBox.margin>
             <Insets left="5.0" />
          </HBox.margin></Button>

@@ -77,7 +77,6 @@ class PersonDetailView extends AbstractJavaFXGriffonView {
          })
       }
     })
-
   }
   
   void showPerson(Person p) {
