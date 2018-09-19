@@ -1,3 +1,8 @@
+https://github.com/dumischbaenger/griffonGroovyJavaFxDBaccessSample/blob/master/readmeassets/img_0004.jpg
+
+
+![Image description](https://github.com/dumischbaenger/griffonGroovyJavaFxDBaccessSample/blob/master/readmeassets/img_0004.jpg)
+
 This is just a tutorial application. It is a quite basic and simple contact manager.
 
 My goals are:
