@@ -1,46 +1,148 @@
-Basic Griffon JavaFX/Groovy project
------------------------------------
+This is just a tutorial application. It is a quite basic and simple contact manager.
 
-You have just created a basic Griffon application with JavaFX as the UI toolkit
-and Groovy as the main language. The project has the following file structure
+My goals are:
+* learn Groovy
+* learn JavaFX 
+* learn the Griffon framework
+* use data binding
+* use JPA/Hibernate with Groovy
 
-    .
-    ├── build.gradle
-    ├── griffon-app
-    │   ├── conf
-    │   ├── controllers
-    │   ├── i18n
-    │   ├── lifecycle
-    │   ├── models
-    │   ├── resources
-    │   ├── services
-    │   └── views
-    ├── pom.xml
-    └── src
-        ├── functional-test
-        │   └── groovy
-        ├── integration-test
-        │   └── groovy
-        ├── main
-        │   ├── groovy
-        │   └── resources
-        └── test
-            ├── groovy
-            └── resources
+# Preparations
 
-Simply add your source files to `src/main/groovy`, your test cases to
-`src/test/groovy` and then you will be able to build your project with
+The first thing is to get the IDE up and running. I use eclipse so there is no perfect "works out of the box" experience.
 
-    gradle build
-    gradle test
-    gradle run
+> Eclipse IDE for Java Developers
+> Version: Oxygen.2 Release (4.7.2)
 
-Don't forget to add any extra JAR dependencies to `build.gradle`!
+## Groovy Plugin
 
-If you prefer building with Maven then execute the following commands
+The Groovy plugin for eclipse is [here](https://github.com/groovy/groovy-eclipse/wiki) available. 
 
-    mvn compile
-    mvn test
-    mvn -Prun
+> Groovy compiler 2.4.13.
 
-Don't forget to add any extra JAR dependencies to `pom.xml`!
+Attention! There is a [regression](https://github.com/groovy/groovy-eclipse/issues/370) with greclipse and buildship (gradle plugin) at the moment (2018-07-24).
+
+## Sdkman
+
+The next step was the installation of [sdkman](https://sdkman.io/). Sdkman is a tool that allows you to install different JDKs on a host. It enables you to switch between OpenJDK versions, Oracle JDK versions, ... within seconds. I wanted to use Oracle JDK without interfering with the OpenJDK installed as default on Suse Tumbleweed. Oracle JDK brings JavaFX. Unfortunately there is not OpenFx package for Suse Tumbleweed.
+
+BTW: Sdkman supports a bunch of other tools as they are: Gradle, Grails, ...
+
+## lazybones
+
+[Lazybones](https://github.com/pledbrook/lazybones) is a project and code generator for different tools and frameworks. You can install it with sdkman.
+
+
+
+### Installation
+
+Install Lazybones with sdkman:
+
+`sdk install lazybones 0.8.3`
+
+
+### Configuration
+
+Lazybones needs extra proxy settings. Apart from that it needs the URL to find the griffon templates. You can enter this information in  "$HOME/.lazybones/config.groovy":
+```groovy
+systemProp {
+    http {
+        proxyHost = "proxy"
+        proxyPort = 3128
+    }   
+    https {
+        proxyHost = "proxy"
+        proxyPort = 3128
+    }
+}
+
+bintrayRepositories = [ 
+    'griffon/griffon-lazybones-templates',
+    'pledbrook/lazybones-templates'
+]
+```
+
+# First test - create griffon project from scratch
+
+
+## Create Project
+
+Go to your eclipse workspace directory and call lazybones
+
+
+```
+lazybones create griffon-javafx-groovy groovyGriffonSample
+```
+
+## Run Project
+
+Change directory to groovyGriffonSample and call this instruction:
+
+```
+gradle run
+```
+
+Now command line gradle builds the project and start the app.
+
+## Eclipse
+
+### Import project
+
+Import project with menu file, import. Import as gradle project. Now you have to make some further steps to convert eclipse into a griffon compatible IDE.
+
+### JRE Access Rules
+
+Eclipse does not automatically allow access to classes of ifxrt.jar. You have to add an access rule. Go to project settings, build path, libraries, JRE (open this tree fragment) and add an access rule that allows access for `javafx/**`.
+
+Look here: https://stackoverflow.com/questions/22812488/using-javafx-in-jre-8
+
+
+
+### APT Annotation Processing Tool
+
+Now you have to activate APT. You can enable it in the project settings dialogue section annotation processing.
+
+Additionally you have to add some jar files to the factory path at the same section:
+
+* griffon-groovy-compile-...jar"
+* griffon-core-compile-...jar"
+* jipsy-...jar
+* gipsy-...jar
+
+
+### Syntax errors
+
+Eclipse has problems to "interpret" some of the annotations right and therefore shows some syntax errors. To avoid this:
+
+* Controller must inherit from AbstractGriffonController
+* Models must inherit from AbstractGriffonModel
+
+
+## Create another MVCGroup
+
+This is not necessary for the first test. I just want to demonstrate how lazybones works.
+
+In the project directory  call:
+
+```
+lazybones generate artifact
+```
+
+or more direct
+
+```
+lazybones generate artifact::mvcgroup
+```
+
+# Get started with this project
+
+## Check out project
+
+* open git perspective
+* choose clone clone a git repository
+* enter URI https://github.com/dumischbaenger/griffonGroovyJavaFxDBaccessSample.git
+* follow the assistent
+
+## Import project
+
+* use menue file, import to import the gradle project
