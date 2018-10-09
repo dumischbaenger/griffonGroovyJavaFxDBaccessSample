@@ -1,3 +1,8 @@
+
+
+
+![Image description](./readmeassets/img_0004.jpgx)
+
 This is just a tutorial application. It is a quite basic and simple contact manager.
 
 My goals are:
