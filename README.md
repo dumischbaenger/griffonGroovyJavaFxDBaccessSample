@@ -167,3 +167,20 @@ The application consists of:
 ## Logging
 
 The app uses *SimpleLogger* via *SLF4J*. The file `.../src/main/resources/simplelogger.properties` contains the complete logger configuration. In order to force *hibernate* to use *SimpleLogger* too, I added this command `System.setProperty("org.jboss.logging.provider", "slf4j");` in `Launcher.groovy`. It must be called in a *static* context.
+
+
+## MVC Groups
+
+The application has the following  MVC groups:
+
+* login - dialog that pops up at the start of the application 
+* mainFrame - the main window
+* searchBar - search buttons in the upper area of the main window
+* personList - table that lists the persons
+* personDetail - panel that holds the person details
+
+### Login
+### MainFrame
+### SearchBar
+### PersonList
+### PersonDetail
