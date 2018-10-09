@@ -5,7 +5,7 @@ My goals are:
 * learn JavaFX 
 * learn the Griffon framework
 * use data binding
-* use JPA/Hibernate with Groovy
+* use JPA/Hibernate application managed persistence with Groovy
 
 # Preparations
 
@@ -114,7 +114,7 @@ Additionally you have to add some jar files to the factory path at the same sect
 
 Eclipse has problems to "interpret" some of the annotations right and therefore shows some syntax errors. To avoid this:
 
-* Controller must inherit from AbstractGriffonController
+* Controllers must inherit from AbstractGriffonController
 * Models must inherit from AbstractGriffonModel
 
 
@@ -141,8 +141,24 @@ lazybones generate artifact::mvcgroup
 * open git perspective
 * choose clone clone a git repository
 * enter URI https://github.com/dumischbaenger/griffonGroovyJavaFxDBaccessSample.git
-* follow the assistent
+* follow the assistant
 
 ## Import project
 
-* use menue file, import to import the gradle project
+* use menu *file*, *import* to import the gradle project
+
+# The application itself
+
+The application consists of:
+
+* Logging
+* Multiple MVC Groups
+* FX Views defined within FXML Files
+* Griffon JPA plugin
+* One service for authentication against the database
+* One service accessing the database
+* Multiple entity beans
+
+## Logging
+
+The app uses *SimpleLogger* via *SLF4J*. The file `.../src/main/resources/simplelogger.properties` contains the complete logger configuration. In order to force *hibernate* to use *SimpleLogger* too, I added this command `System.setProperty("org.jboss.logging.provider", "slf4j");` in `Launcher.groovy`. It must be called in a *static* context.
